@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>C2</title>
+  <link rel="icon" type="image/x-icon" href="src/images/c2-logo.ico">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+  <link href="src/css/main.css" rel="stylesheet" />
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+</head>
+
+<body>
+
+  <!-- Start Header Menu -->
+  <header>
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="">
+        <a title="C2" href="index.html">
+          <img src="src/images/c2-logo.png" alt="C2 logo" />
+        </a>
+      </div>
+      <div class="menu-button d-flex justify-content-between align-items-center">
+        <div class="me-2">Menu</div>
+        <div class="d-flex flex-column align-items-end">
+          <span></span>
+          <span class="mt-1"></span>
+          <span class="mt-1"></span>
+        </div>
+      </div>
+      <nav class="d-flex flex-column opacity-0 invisible">
+        <span class="close">X</span>
+        <a href="#">The Work</a>
+        <a href="#">The Team</a>
+        <a href="#">C2 Native</a>
+        <a href="#">C2 Next</a>
+        <hr />
+        <a href="#" class="fw-bold d-flex">
+          Let's talk
+          <span class="part bottom-right arrow">&#129125;</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+  <!-- End Header Menu -->
+
+  <span id="cursor-info">aa</span>
+
+  <!-- Start Words -->
+  
+  <!-- Unignorable 
+  That’s what you want to be
+
+  By flexing our smarts 
+  in everything we do
+  we make your brand 
+  break through the clutter 
+
+  
+  So let’s do something 
+  Unignorable Together 
+  
+  Give us a shout! -->
+  <section class="centered phrase-3 scene one-by-one overflow-hidden">
+    <section class="video-bg">
+      <video id="video-bg" autoplay loop muted>
+        <source src="src/videos/bg.mp4" type="video/mp4" />
+      </video>
+    </section>
+    <div style="
+          opacity: 1;
+          transform: perspective(100px) translateZ(00px) translateY(-70px);
+        " class="centered text-yellow">
+      <p>Unignorable</p>
+    </div>
+    <div class="centered">
+      <p class="words">That’s what you want to be</p>
+    </div>
+    <div class="centered">
+      <p class="words">And that’s where we step in</p>
+    </div>
+    <div class="centered">
+      <p class="words">By flexing our smarts</p>
+    </div>
+    <div class="centered">
+      <p class="words">and agility</p>
+    </div>
+    <div class="centered">
+      <p class="words">in everything we do</p>
+    </div>
+    <div class="centered">
+      <p class="words">We help your brand</p>
+    </div>
+    <div class="centered">
+      <p class="words">break through the clutter</p>
+    </div>
+    <div class="centered">
+      <p class="words">And get people talking</p>
+    </div>
+    <div class="centered">
+      <p class="words">So let’s do something</p>
+    </div>
+    <div class="centered">
+      <p class="words">Unignorable Together</p>
+    </div>
+    <section id="shout" class="centered" style="
+            transform: perspective(100px) translateZ(0px) translateY(0px);
+          ">
+      <p class="words">Give us a shout!</p>
+    </section>
+  </section>
+  <!-- End Words -->
+
+  <!-- Start Featured Work -->
+  <section id="feat-work" class="feat-work d-flex swiper mySwiper w-100 overflow-x-hidden">
+    <!-- <section class="bg-linear">
+    <video id="bg-linear" autoplay loop muted>
+      <source src="src/videos/bg2.webm" type="video/webm" />
+    </video>
+  </section> -->
+    <div class="section-title mx-5 mb-3 ">
+      <h2 class="title stroke stroke-1 stroke-yellow fs-7 f-hanson">
+        Featured Work
+      </h2>
+    </div>
+    <div class="content mx-5">
+      <p>Aliquam erat volutpat. Ut wisi enim ad minim veniam, quis <br>nostrud exerci tation ullamcorper suscipit
+      </p>
+    </div>
+    
+    <div class="feat-videos swiper-wrapper">
+      <!-- <div class="slider-shadow"></div>
+      <div class="slider-shadow left"></div> -->
+      <div class="work swiper-slide">
+        <div class="showVideo">
+          <video muted width="100%" poster="src/images/maserati-cover.png">
+            <source src="src/videos/maserati-supers.mp4" type="video/mp4" />
+          </video>
+          <div class="feat-title ms-4">Maserati</div>
+        </div>
+      </div>
+      <div class="work swiper-slide">
+        <div class="showVideo">
+          <video muted width="100%" poster="src/images/lambweston-cover.png">
+            <source src="src/videos/lambweston.mp4" type="video/mp4" />
+          </video>
+          <div class="feat-title">LambWeston</div>
+        </div>
+      </div>
+      <div class="work swiper-slide">
+        <div class="showVideo">
+          <video muted width="100%" poster="src/images/zoom-cover.png">
+            <source src="src/videos/zoom-hotdog.mp4" type="video/mp4" />
+          </video>
+          <div class="feat-title">Zoom HotDog</div>
+        </div>
+      </div>
+      <div class="work swiper-slide">
+        <div class="showVideo">
+          <video muted width="100%" poster="src/images/zoom-cover.png">
+            <source src="src/videos/zoom-hotdog.mp4" type="video/mp4" />
+          </video>
+          <div class="feat-title">Zoom HotDog</div>
+        </div>
+      </div>
+    </div>
+    <div class="swiper-scrollbar"></div>
+  </section>
+  <!-- End Featured Work -->
+  
+  <!-- <section class="bg-linear">
+    <video id="bg-linear" autoplay loop muted>
+      <source src="src/videos/bg2.webm" type="video/webm" />
+    </video>
+  </section> -->
+
+  <!-- Start People Info -->
+  <section id="people-info" class="">
+
+    <!-- Start Roy -->
+    <div class="info">
+      <div class="section-title mx-5 mb-5">
+        <h2 class="title stroke stroke-1 stroke-yellow fs-7 f-hanson mb-0 text-uppercase">Roy Aftimos</h2>
+        <h3 class="">CEO</h3>
+      </div>
+      <div class="content mx-5">
+        <p>
+          What drives me to keep pushing is the collective hunger of the tribe, and a relentless need to become a better version of who we are. Day in, day out.
+        </p>
+        <p>
+          An obsession with creating unignorable work is the motto of every day. And with more than two decades of strategic communication experience, I am on a mission to explore who we are as C2 and where we can be beyond the UAE, Saudi Arabia, and India.
+          </p>
+      </div>
+      <img src="src/images/roy-upscale.jpg" alt="">
+      <div class="content content-right mt-5 ml-auto">
+        <p>What continually motivates us is our commitment to leveraging curiosity and technology to empower businesses to thrive.</p>
+        <p>When I am not looking into numbers, you will find me sailing, enjoying a Cuban, or reading through a national geographic magazine.</p>
+        <p>I am Roy and I am the CEO of C2.</p>
+      </div>
+    </div>
+    <!-- End Roy -->
+    
+    <!-- Start Samer -->
+    <div class="info">
+      <div class="section-title mx-5 mb-5">
+        <h2 class="title stroke stroke-1 stroke-yellow fs-7 f-hanson mb-0 text-uppercase">Samer Qaqish</h2>
+        <h3 class="">General Manager</h3>
+      </div>
+      <div class="content mx-5">
+        <p>
+          What drives me to keep pushing is the collective hunger of the tribe, and a relentless need to become a better version of who we are. Day in, day out.
+        </p>
+        <p>
+          An obsession with creating unignorable work is the motto of every day. And with more than two decades of strategic communication experience, I am on a mission to explore who we are as C2 and where we can be beyond the UAE, Saudi Arabia, and India.
+          </p>
+      </div>
+      <img src="https://place-hold.it/1920x795?text=Samer%20Qaqish&fontsize=75" alt="">
+      <div class="content content-right mt-5 ml-auto">
+        <p>What continually motivates us is our commitment to leveraging curiosity and technology to empower businesses to thrive.</p>
+        <p>When I am not looking into numbers, you will find me sailing, enjoying a Cuban, or reading through a national geographic magazine.</p>
+        <p>I am Roy and I am the CEO of C2.</p>
+      </div>
+    </div>
+    <!-- End Samer -->
+    
+    <!-- Start Taniya -->
+    <div class="info">
+      <div class="section-title mx-5 mb-5">
+        <h2 class="title stroke stroke-1 stroke-yellow fs-7 f-hanson mb-0 text-uppercase">Taniya</h2>
+        <h3 class="">HR Director</h3>
+      </div>
+      <div class="content mx-5">
+        <p>
+          What drives me to keep pushing is the collective hunger of the tribe, and a relentless need to become a better version of who we are. Day in, day out.
+        </p>
+        <p>
+          An obsession with creating unignorable work is the motto of every day. And with more than two decades of strategic communication experience, I am on a mission to explore who we are as C2 and where we can be beyond the UAE, Saudi Arabia, and India.
+          </p>
+      </div>
+      <img src="https://place-hold.it/1920x795?text=Taniya&fontsize=75" alt="">
+      <div class="content content-right mt-5 ml-auto">
+        <p>What continually motivates us is our commitment to leveraging curiosity and technology to empower businesses to thrive.</p>
+        <p>When I am not looking into numbers, you will find me sailing, enjoying a Cuban, or reading through a national geographic magazine.</p>
+        <p>I am Roy and I am the CEO of C2.</p>
+      </div>
+    </div>
+    <!-- End Taniya -->
+
+    <!-- Start Zahir -->
+    <div class="info">
+      <div class="section-title mx-5 mb-5">
+        <h2 class="title stroke stroke-1 stroke-yellow fs-7 f-hanson mb-0 text-uppercase">Zahir Mirza</h2>
+        <h3 class="">Executive Creative Director</h3>
+      </div>
+      <div class="content mx-5">
+        <p>
+          What drives me to keep pushing is the collective hunger of the tribe, and a relentless need to become a better version of who we are. Day in, day out.
+        </p>
+        <p>
+          An obsession with creating unignorable work is the motto of every day. And with more than two decades of strategic communication experience, I am on a mission to explore who we are as C2 and where we can be beyond the UAE, Saudi Arabia, and India.
+          </p>
+      </div>
+      <img src="https://place-hold.it/1920x795?text=Zahir%20Mirza&fontsize=75" alt="">
+      <div class="content content-right mt-5 ml-auto">
+        <p>What continually motivates us is our commitment to leveraging curiosity and technology to empower businesses to thrive.</p>
+        <p>When I am not looking into numbers, you will find me sailing, enjoying a Cuban, or reading through a national geographic magazine.</p>
+        <p>I am Roy and I am the CEO of C2.</p>
+      </div>
+    </div>
+    <!-- End Zahir -->
+
+    <!-- Start Nair -->
+    <div class="info">
+      <div class="section-title mx-5 mb-5">
+        <h2 class="title stroke stroke-1 stroke-yellow fs-7 f-hanson mb-0 text-uppercase">Nair</h2>
+        <h3 class="">Finance Director</h3>
+      </div>
+      <div class="content mx-5">
+        <p>
+          What drives me to keep pushing is the collective hunger of the tribe, and a relentless need to become a better version of who we are. Day in, day out.
+        </p>
+        <p>
+          An obsession with creating unignorable work is the motto of every day. And with more than two decades of strategic communication experience, I am on a mission to explore who we are as C2 and where we can be beyond the UAE, Saudi Arabia, and India.
+          </p>
+      </div>
+      <img src="https://place-hold.it/1920x795?text=Nair&fontsize=75" alt="">
+      <div class="content content-right mt-5 ml-auto">
+        <p>What continually motivates us is our commitment to leveraging curiosity and technology to empower businesses to thrive.</p>
+        <p>When I am not looking into numbers, you will find me sailing, enjoying a Cuban, or reading through a national geographic magazine.</p>
+        <p>I am Roy and I am the CEO of C2.</p>
+      </div>
+    </div>
+    <!-- End Nair -->
+
+    <!-- Start Layal Elsayed -->
+    <div class="info">
+      <div class="section-title mx-5 mb-5">
+        <h2 class="title stroke stroke-1 stroke-yellow fs-7 f-hanson mb-0 text-uppercase">Layal Elsayed</h2>
+        <h3 class="">Business Director</h3>
+      </div>
+      <div class="content mx-5">
+        <p>
+          What drives me to keep pushing is the collective hunger of the tribe, and a relentless need to become a better version of who we are. Day in, day out.
+        </p>
+        <p>
+          An obsession with creating unignorable work is the motto of every day. And with more than two decades of strategic communication experience, I am on a mission to explore who we are as C2 and where we can be beyond the UAE, Saudi Arabia, and India.
+          </p>
+      </div>
+      <img src="https://place-hold.it/1920x795?text=Layal%20Elsayed&fontsize=75" alt="">
+      <div class="content content-right mt-5 ml-auto">
+        <p>What continually motivates us is our commitment to leveraging curiosity and technology to empower businesses to thrive.</p>
+        <p>When I am not looking into numbers, you will find me sailing, enjoying a Cuban, or reading through a national geographic magazine.</p>
+        <p>I am Roy and I am the CEO of C2.</p>
+      </div>
+    </div>
+    <!-- End Layal Elsayed -->
+
+    <!-- Start Suraj Sadeesh -->
+    <div class="info">
+      <div class="section-title mx-5 mb-5">
+        <h2 class="title stroke stroke-1 stroke-yellow fs-7 f-hanson mb-0 text-uppercase">Suraj Sadeesh</h2>
+        <h3 class="">Strategic Growth Director</h3>
+      </div>
+      <div class="content mx-5">
+        <p>
+          What drives me to keep pushing is the collective hunger of the tribe, and a relentless need to become a better version of who we are. Day in, day out.
+        </p>
+        <p>
+          An obsession with creating unignorable work is the motto of every day. And with more than two decades of strategic communication experience, I am on a mission to explore who we are as C2 and where we can be beyond the UAE, Saudi Arabia, and India.
+          </p>
+      </div>
+      <img src="https://place-hold.it/1920x795?text=Suraj%20Sadeesh&fontsize=75" alt="">
+      <div class="content content-right mt-5 ml-auto">
+        <p>What continually motivates us is our commitment to leveraging curiosity and technology to empower businesses to thrive.</p>
+        <p>When I am not looking into numbers, you will find me sailing, enjoying a Cuban, or reading through a national geographic magazine.</p>
+        <p>I am Roy and I am the CEO of C2.</p>
+      </div>
+    </div>
+    <!-- End Suraj Sadeesh -->
+
+  </section>
+  <!-- End People Info -->
+
+  <!-- Start Featured People -->
+  <section id="feat-people" class="overflow-x-hidden swiper mySwiper w-100">
+    <div class="section-title mx-5 mb-3">
+      <h2 class="title stroke stroke-1 stroke-yellow fs-7 f-hanson mb-0 text-uppercase">
+        The People
+      </h2>
+    </div>
+    <div class="content mx-5">
+      <p>
+        Adventurous by nature, passionately creative, and constantly <br>seeking the road less traveled
+      </p>
+    </div>
+    
+    <div class="five-col swiper-wrapper">
+      <!-- <div class="slider-shadow"></div>
+      <div class="slider-shadow left"></div> -->
+      <div class="col swiper-slide">
+        <div class="showTeam">
+          <img src="/src/images/roy.jpg" alt="">
+          <h3 class="team-title mt-4">Roy Aftimos</h3>
+          <h4 class="team-designation">CEO</h4>
+        </div>
+      </div>
+      <div class="col swiper-slide">
+        <div class="showTeam">
+          <img src="/src/images/samer.jpg" alt="">
+          <h3 class="team-title mt-4">Samer Qaqish</h3>
+          <h4 class="team-designation">General Manager</h4>
+        </div>
+      </div>
+      <div class="col swiper-slide">
+        <div class="showTeam">
+          <img src="/src/images/taniya.jpg" alt="">
+          <h3 class="team-title mt-4">Taniya</h3>
+          <h4 class="team-designation">HR Director</h4>
+        </div>
+      </div>
+      <div class="col swiper-slide">
+        <div class="showTeam">
+          <img src="/src/images/zahir.jpg" alt="">
+          <h3 class="team-title mt-4">Zahir Mirza</h3>
+          <h4 class="team-designation">Executive Creative Director</h4>
+        </div>
+      </div>
+      <div class="col swiper-slide">
+        <div class="showTeam">
+          <img src="/src/images/nair.jpg" alt="">
+          <h3 class="team-title mt-4">Nair</h3>
+          <h4 class="team-designation">Finance Director</h4>
+        </div>
+      </div>
+      <div class="col swiper-slide">
+        <div class="showTeam">
+          <img src="/src/images/layal.jpg" alt="">
+          <h3 class="team-title mt-4">Layal Elsayed</h3>
+          <h4 class="team-designation">Business Director</h4>
+        </div>
+      </div>
+      <div class="col swiper-slide">
+        <div class="showTeam">
+          <img src="/src/images/suraj.jpg" alt="">
+          <h3 class="team-title mt-4">Suraj Sadeesh</h3>
+          <h4 class="team-designation">Strategic Growth Director</h4>
+        </div>
+      </div>
+    </div>
+    <div class="swiper-scrollbar"></div>
+  </section>
+  <!-- End Featured People -->
+
+  <!-- Start Partners -->
+  <section class="partners centered">
+    <h2 class="title f-hanson text-uppercase">Our partners</h2>
+    <ul class="list-inline">
+      <li class="list-inline-item active">Automotive</li>
+      <li class="list-inline-item">Education</li>
+      <li class="list-inline-item">FMCG</li>
+      <li class="list-inline-item">Governmental</li>
+      <li class="list-inline-item">Health</li>
+      <li class="list-inline-item">Retail</li>
+    </ul>
+    <div class="container-small">
+      <div class="partner">
+        <img src="/src/images/partners/porsche.png" alt="">
+        <img src="/src/images/partners/maserati.png" alt="">
+        <img src="/src/images/partners/ferrari.png" alt="">
+        <img src="/src/images/partners/ana.png" alt="">
+        <img src="/src/images/partners/lamborghini.png" alt="">
+        <img src="/src/images/partners/mg.png" alt="">
+      </div>
+    </div>
+  </section>
+  <!-- End Partners -->
+
+  <!-- Start Alliances -->
+  <section class="alliances centered">
+    <h2 class="title f-hanson text-uppercase">Strategic </br> Alliances</h2>
+    <div class="container-fluid">
+      <div class="alliance mx-auto row justify-content-center">
+        <img src="/src/images/alliance/snapchat.png" alt="" class="col-3 col-lg-2">
+        <img src="/src/images/alliance/meta.png" alt="" class="col-3 col-lg-2">
+        <img src="/src/images/alliance/instagram.png" alt="" class="col-3 col-lg-2">
+        <img src="/src/images/alliance/mg.png" alt="" class="col-3 col-lg-2">
+        <img src="/src/images/alliance/oracle.png" alt="" class="col-3 col-lg-2">
+        <img src="/src/images/alliance/meta.png" alt="" class="col-3 col-lg-2">
+        <img src="/src/images/alliance/microsoft.png" alt="" class="col-3 col-lg-2">
+        <img src="/src/images/alliance/mg.png" alt="" class="col-3 col-lg-2">
+        <img src="/src/images/alliance/microsoft.png" alt="" class="col-3 col-lg-2">
+        <img src="/src/images/alliance/snapchat.png" alt="" class="col-3 col-lg-2">
+        <img src="/src/images/alliance/oracle.png" alt="" class="col-3 col-lg-2">
+        <img src="/src/images/alliance/instagram.png" alt="" class="col-3 col-lg-2">
+        <img src="/src/images/alliance/meta.png" alt="" class="col-3 col-lg-2">
+        <img src="/src/images/alliance/snapchat.png" alt="" class="col-3 col-lg-2">
+        <img src="/src/images/alliance/mg.png" alt="" class="col-3 col-lg-2">
+        <img src="/src/images/alliance/instagram.png" alt="" class="col-3 col-lg-2">
+        <img src="/src/images/alliance/microsoft.png" alt="" class="col-3 col-lg-2">
+        <img src="/src/images/alliance/oracle.png" alt="" class="col-3 col-lg-2">
+      </div>
+    </div>
+  </section>
+  <!-- End Alliances -->
+
+  <section class="contact overflow-x-hidden section-half">
+    <ul class="list-inline overflow-x-visibe d-flex">
+      <li class="list-inline-item text-nowrap"><h2 class="fs-7 f-hanson">Let's talk<span class="arrow-upright"></span></h2></li>
+      <li class="list-inline-item text-nowrap"><h2 class="fs-7 f-hanson"><a href="mailto:business@c2comms.cx" class="stroke stroke-1 stroke-white text-decoration-none">business@c2comms.cx</a><span class="arrow-upright"></span></h2></li>
+      <li class="list-inline-item text-nowrap"><h2 class="fs-7 f-hanson">Let's talk<span class="arrow-upright"></span></h2></li>
+    </ul>
+  </section>
+
+  <!-- <div class="video-project-container scene">
+  </div> -->
+  <!-- <section class="centered">
+    <h2 class="phrase-1 text-center">
+      MAKERS & <br />
+      INNOVATOR, FOR <br />
+      THE LOVE OF <br />
+      THE CRAFT
+    </h2>
+  </section> -->
+
+  <div class="work-video">
+    <span class="close">X</span>
+    <video autoplay loop muted>
+      <source src="src/videos/maserati-supers.mp4" type="video/mp4" />
+    </video>
+    <span class="vid-status">PLAYING</span>
+    <div class="position-absolute bottom-0 feat-footer py-3">
+      <h2 class="px-5">Maserati</h2>
+      <hr />
+      <p class="px-5">
+        When talking about the Maserati Grecale, nothing is off-limits. See how
+        we turned a car into an experience with the help of 4 major influencers,
+        and how Maserati continues to create exceptional every day along with
+        C2.
+      </p>
+    </div>
+  </div>
+
+  <div class="work-video">
+    <span class="close" id="close">X</span>
+    <video autoplay loop muted>
+      <source src="src/videos/lambweston.mp4" type="video/mp4" />
+    </video>
+    <span class="vid-status">PLAYING</span>
+    <div class="position-absolute bottom-0 feat-footer py-3">
+      <h2 class="px-5">LambWeston</h2>
+      <hr />
+      <p class="px-5">
+        How do you rebrand fries? The side dish, the sidekick, the extra. You make them the hero. With LambWeston,
+        that’s what we aimed to do. With crispy, delicious, and golden fries, we made them all that matters on every
+        single table.
+      </p>
+    </div>
+  </div>
+
+  <div class="work-video">
+    <span class="close" id="close">X</span>
+    <video autoplay loop muted>
+      <source src="src/videos/zoom-hotdog.mp4" type="video/mp4" />
+    </video>
+    <span class="vid-status">PLAYING</span>
+    <div class="position-absolute bottom-0 feat-footer py-3">
+      <h2 class="px-5">Zoom HotDog</h2>
+      <hr />
+      <p class="px-5">
+        A hot dog with ZOOM isn’t just a hot dog… it’s an epic story! From a lush green forest to dunes of golden sand,
+        every ZOOM hot dog promises to elevate your taste buds to the next level and say goodbye to plain hot dogs.
+      </p>
+    </div>
+  </div>
+
+  <footer class="mx-5 ">
+    <div class="footer-top row justify-content-center text-center">
+      <div class="col-3">
+        <h6>Phone No.</h6>
+        <p><a href="tel:+971 04 282 7621" class="text-decoration-none text-secondary">+971 04 282 7621</a></p>
+      </div>
+      <div class="col-3">
+        <h6>Email</h6>
+        <p><a href="mailto:business@c2comms.cx" class="text-decoration-none text-secondary">business@c2comms.cx</a></p>
+      </div>
+      <div class="col-3">
+        <h6>Follow us</h6>
+        <ul class="list-inline">
+          <li class="list-inline-item"><a href="#" class="text-decoration-none text-secondary">BE</a></li>
+          <li class="list-inline-item"><a href="#" class="text-decoration-none text-secondary">IG</a></li>
+          <li class="list-inline-item"><a href="#" class="text-decoration-none text-secondary">IN</a></li>
+          <li class="list-inline-item"><a href="#" class="text-decoration-none text-secondary">FB</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom text-center">
+      © 2023 C2 | Privacy Policy
+    </div>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/CSSRulePlugin.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.28/bundled/lenis.min.js"></script> 
+  <script src="src/js/anime.min.js"></script>
+  
+  <script src="src/js/custom.js"></script>
+  <!-- <script src="src/js/fonts.js"></script> -->
+</body>
+
+</html>
