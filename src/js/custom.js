@@ -361,7 +361,7 @@ $(function () {
       start: "top top",
       scrub: 1,
       ease: "circ.out",
-      markers: true
+      // markers: true
     }
   })
 });
