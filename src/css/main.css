@@ -101,6 +101,7 @@ img {
 
 section {
     min-height: 100vh;
+    padding: 100px 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -697,6 +698,7 @@ header nav .arrow {
 }
 .partner img {
     max-width: 250px;
+    opacity: 1;
 }
 .partner img,
 .alliance img {
@@ -714,6 +716,7 @@ header nav .arrow {
 }
 .alliance img {
     max-width: 270px;
+    opacity: 1;
 }
 
 .arrow-upright {
@@ -764,6 +767,22 @@ footer {
 }
 #people-info .info.active {
     display: block;
+}
+.partner-reveal,
+.alliance-reveal {
+    position: relative;
+}
+.partner-reveal .reveal-block,
+.alliance-reveal .reveal-block {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    z-index: 1;
+    transform-origin: top center;
+    /* transform: scaleY(1); */
 }
 .swiper-scrollbar {
     background: #fff!important;

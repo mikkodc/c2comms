@@ -6,7 +6,6 @@ $(function () {
   });
 
   window.addEventListener("scroll", function (ev) {
-    console.log(ev);
     $("header").addClass("opacity-0");
   });
 
@@ -322,7 +321,6 @@ $(function () {
       // remove class active
       for (j = 0; j < teamInfo.length; j++){
         if(teamInfo[j].classList.contains('active')) {
-          console.log('test')
           teamInfo[j].classList.remove('active')
         }
       }
@@ -331,6 +329,56 @@ $(function () {
       teamInfo[i].classList.add("active");
     });
   });
+
+  // Partners
+  const partnersSection = document.querySelector("section.partners")
+  gsap.to(infoContainer, {
+    opacity:0, 
+    display: "none",
+    scrollTrigger: {
+      trigger: ".partners",
+      start: "top top",
+      scrub: 1,
+      ease: "circ.out",
+    }
+  })
+
+  var imageRevealTl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".partners",
+      start: "top center",
+      ease: "expo.out",
+    }
+  })
+
+  imageRevealTl.to('.partners .reveal-block', {
+    scaleY: 0,
+    stagger: 0.25
+  })
+  .from('.partners img', {
+    duration: 1, 
+    opacity: 0,
+    stagger: 0.25
+  }, "-=2")
+
+  var allianceRevealTl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".alliances",
+      start: "top center",
+      ease: "expo.out",
+    }
+  })
+
+  allianceRevealTl.to('.alliance .reveal-block', {
+    scaleY: 0,
+    stagger: 0.1
+  })
+  .from('.alliance img', {
+    duration: 1, 
+    opacity: 0,
+    stagger: 0.1
+  }, "-=2")
+  
 
   // Contact Us Marquee
   const contactMarquee = document.querySelector('.contact ul')
@@ -343,25 +391,9 @@ $(function () {
    opacity: 1,
    scrollTrigger: {
     trigger: '.contact',
-    start: "top center",
-    end: "bottom center",
-    pin: true,
+    start: "top bottom",
     scrub: 2,
     ease: "circ.out",
    } 
-  })
-
-  // Partners
-  const partnersSection = document.querySelector("section.partners")
-  gsap.to(infoContainer, {
-    opacity:0, 
-    display: "none",
-    scrollTrigger: {
-      trigger: ".partners",
-      start: "top top",
-      scrub: 1,
-      ease: "circ.out",
-      // markers: true
-    }
   })
 });
