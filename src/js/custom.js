@@ -343,23 +343,23 @@ $(function () {
     }
   })
 
-  var imageRevealTl = gsap.timeline({
-    scrollTrigger: {
-      trigger: ".partners",
-      start: "top center",
-      ease: "expo.out",
-    }
-  })
+  // var imageRevealTl = gsap.timeline({
+  //   scrollTrigger: {
+  //     trigger: ".partners",
+  //     start: "top center",
+  //     ease: "expo.out",
+  //   }
+  // })
 
-  imageRevealTl.to('.partners .reveal-block', {
-    scaleY: 0,
-    stagger: 0.25
-  })
-  .from('.partners img', {
-    duration: 1, 
-    opacity: 0,
-    stagger: 0.25
-  }, "-=2")
+  // imageRevealTl.to('.partners .reveal-block', {
+  //   scaleY: 0,
+  //   stagger: 0.25
+  // })
+  // .from('.partners img', {
+  //   duration: 1, 
+  //   opacity: 0,
+  //   stagger: 0.25
+  // }, "-=2")
 
   var allianceRevealTl = gsap.timeline({
     scrollTrigger: {

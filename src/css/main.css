@@ -193,30 +193,37 @@ header .menu-button span {
 
 header nav {
     background-color: var(--lightgray);
-    height: 80vh;
+    height: 650px;
     width: 50vw;
     position: absolute;
     top: 20px;
     right: 0px;
     z-index: 100;
-    /* border-radius: 35px 0 0 35px; */
-    padding: 5rem 0 10px 60px;
+    border-radius: 35px 0 0 35px;
+    padding: 112px 0 70px 60px;
     transition: opacity var(--transition-5);
 }
 
 header nav a {
     color: var(--black-1);
     text-decoration: none;
-    padding: 8px;
-    font-size: 2em;
+    /* padding: 8px; */
+    font-size: 30px;
+    line-height: 30px;
 }
 
-header nav a:not(:last-child) {
-    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+header nav ul li:not(:last-child) {
+    margin-bottom: 48px;
 }
 
-header nav a:last-child {
-    font-family: hanson;
+header nav .cta-button {
+    margin-top: 40px;
+    border-top: 1px solid #000;
+    padding-top: 20px;
+    font-size: 50px;
+    line-height: 50px;
+    font-weight: 700;
+    font-family: 'Hanson', Arial, Helvetica, sans-serif;
 }
 
 header nav hr {
@@ -676,13 +683,16 @@ header nav .arrow {
     margin-top: 72px;
     margin-bottom: 112px;
 }
-.partners ul li {
+.partners ul li button {
     font-size: 36px;
     line-height: 43px;
     opacity: 0.5;
+    color: #fff;
 }
-.partners ul li.active {
+.partners ul li button.active,
+.partners ul li button:hover {
     opacity: 1;
+    color: #fff;
 }
 .list-inline-item:not(:last-child) {
     margin-right: 40px;
@@ -745,6 +755,18 @@ header nav .arrow {
     position: absolute;
     background: url(../images/arrow-upright-white.svg) center/contain no-repeat;
 }
+.arrow-upright--black {
+    background-color: transparent;
+    border: 1px solid #000000;
+}
+.arrow-upright--black::before {
+    background: url(../images/arrow-upright-black.svg) center/contain no-repeat;
+}
+
+.arrow-upright--sm {
+    width: 80px;
+    height: 80px
+}
 footer {
   padding-bottom: 70px;  
 }
@@ -772,7 +794,7 @@ footer {
 .alliance-reveal {
     position: relative;
 }
-.partner-reveal .reveal-block,
+/* .partner-reveal .reveal-block, */
 .alliance-reveal .reveal-block {
     position: absolute;
     top: 0;
@@ -795,4 +817,17 @@ footer {
     border-radius: 0!important;
     height: 15px!important;
     cursor: move;
+}
+footer.social {
+    border-top: 1px solid #fff;
+    padding-top: 30px;
+}
+footer.social h6 {
+    font-size: 20px;
+    line-height: 22px;
+    font-weight: 300;
+}
+footer.social a {
+    color: #fff;
+    font-size: 32px;
 }
