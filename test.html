@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>C2</title>
+  <link rel="icon" type="image/x-icon" href="src/images/c2-logo.ico">
+
+  <link href="src/css/main.css" rel="stylesheet" />
+
+  <style>
+    .spacer {
+      height: 100vh;
+    }
+    .animated-element {
+      width: 300px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      background-color: violet;
+      border-radius: 8px;
+      position: relative;
+      left: -400px;
+    }
+
+    h2 {
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="spacer"></div>
+  <div class="spacer">
+    <div class="animated-element">
+      <h2>Animate me</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum magni nulla, laudantium natus rerum beatae a iste voluptas rem deleniti magnam accusantium maiores doloremque porro, dolore, in sequi placeat? Earum!</p>
+    </div>
+  </div>
+  <div class="spacer"></div>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.28/bundled/lenis.min.js"></script> 
+
+  <script>
+    const lenis = new Lenis()
+
+    lenis.on('scroll', (e) => {
+      console.log(e)
+    })
+
+    function raf(time) {
+      lenis.raf(time)
+      requestAnimationFrame(raf)
+    }
+
+    requestAnimationFrame(raf)
+  </script>
+</body>
+</html>

@@ -262,18 +262,14 @@ $(function () {
   });
 
   // Smooth Scroll
-  // const lenis = new Lenis()
+  const lenis = new Lenis()
 
-  // lenis.on('scroll', (e) => {
-  //   console.log(e)
-  // })
+  function raf(time) {
+    lenis.raf(time)
+    requestAnimationFrame(raf)
+  }
 
-  // function raf(time) {
-  //   lenis.raf(time)
-  //   requestAnimationFrame(raf)
-  // }
-
-  // requestAnimationFrame(raf)
+  requestAnimationFrame(raf)
 
 
   // Horizontal Sections
@@ -396,4 +392,47 @@ $(function () {
     ease: "circ.out",
    } 
   })
+
+  // Case Studies
+  gsap.registerPlugin(ScrollToPlugin)
+  let caseStudyCards = gsap.utils.toArray(".case-studies__card");
+  let caseStudyScrollbar = document.querySelector('#case-study .swiper-scrollbar');
+  let caseStudyMain = document.querySelector('#case-study .case-studies');
+  let caseStudyContent = document.querySelector('#case-study .content');
+  let sectionContent = gsap.utils.toArray(".content .animate")
+
+  const caseStudyTl = gsap.timeline({
+    scrollTrigger: {
+      trigger: '#case-study',
+      start: "center center",
+      bottom: "center -=15000",
+      pin: true,
+      scrub: 1
+    }
+  })
+
+  caseStudyTl
+    .from(caseStudyCards, {
+      opacity: 0,
+      y: 100,
+      stagger: 0.2,
+      duration: 2
+    }, "+=1")
+    .to(caseStudyCards[0], {
+      left: 0
+    }, "+=0.5")
+    .to(caseStudyCards[3], {
+      left: 1800,
+      delay: 1
+    })
+    .to(caseStudyCards[1], {
+      left: 600
+    }, "+=0.5")
+    .to(caseStudyCards[2], {
+      left: 1200
+    }, "+=0.5")
+    .from(caseStudyScrollbar, {
+      opacity: 0,
+      y: 100
+    }, "+=2")
 });
