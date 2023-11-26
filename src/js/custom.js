@@ -386,20 +386,118 @@ $(function () {
    xPercent: -80,
    opacity: 1,
    scrollTrigger: {
-    trigger: '.contact',
+    trigger: '#contact',
     start: "top bottom",
+    end: "bottom center",
     scrub: 2,
     ease: "circ.out",
+    // markers: true
    } 
   })
+
+  // Dashboard
+  const dashboardTitle = document.querySelector('#dashboard .section-title')
+  const dashboardMainImg = document.querySelector('.dashboard-expand__main img')
+  const fadeContent = gsap.utils.toArray('#dashboard .fade-content')
+  let expandItem = document.querySelectorAll(".dashboard-expand__item");
+
+  var setX = $(window).width()/2 - dashboardTitle.offsetWidth/2;
+  var setY = $(window).height()/2;
+
+  const dashboardTl = gsap.timeline({
+    scrollTrigger: {
+      trigger: '#dashboard',
+      start: "center center",
+      bottom: "center center",
+      pin: true,
+      scrub: 1,
+    }
+  })
+
+  dashboardTl
+    .set( dashboardTitle , { x: setX, y: setY } )
+    .set(dashboardMainImg, {
+      scale: 1.6,
+      x: 200
+    })
+    .fromTo(dashboardTitle, { 
+      x: setX, 
+      y: setY,
+      opacity:0, 
+      ease:"back.out(5)", 
+      duration: 1,
+    }, {
+      opacity: 1,
+      duration: 2
+    })
+    .to(dashboardTitle, {
+      y: 100,
+      x: setX, 
+      y: 50,
+      x: 0,
+      width: "94%",
+      duration: 3
+    })
+    .from(fadeContent, {
+      opacity: 0,
+      y: 100,
+      stagger: 0.2,
+      duration: 4
+    })
+    .to(dashboardTitle, {
+      y: 0,
+      opacity: 0,
+      display: "none",
+      delay: 2,
+      duration: 1
+    })
+    .to(fadeContent[0], {
+      opacity: 0,
+      x: -500,
+    })
+    .set(dashboardMainImg, {
+      scale: 1,
+      x: 0
+    }, "-=0.5")
+    .to(fadeContent[0], {
+      width: 0,
+      display: "none",
+    }, "-=0.5")
+    .to(fadeContent[1], {
+      width: "100%",
+      // height: "100%"
+    }, "+=0.75")
+    .to(dashboardMainImg, {
+      scale: 0.65,
+      x: 0,
+    })
+    .from(expandItem, {
+      opacity: 0,
+      y: 100,
+      stagger: 0.6,
+      delay: 0.5,
+      duration: 5
+    })
+
+    expandItem.forEach(function(elem, i) {
+      elem.addEventListener("click", function () {
+        if(elem.classList.contains('active')) {
+          elem.classList.remove('active')
+        } else {
+          elem.classList.add("active");
+          // for (j = 0; j < expandItem.length; j++){
+          //   if(expandItem[j].classList.contains('active')) {
+          //     expandItem[j].classList.remove('active')
+          //   }
+          // }
+        }
+      })
+    })
 
   // Case Studies
   gsap.registerPlugin(ScrollToPlugin)
   let caseStudyCards = gsap.utils.toArray(".case-studies__card");
   let caseStudyScrollbar = document.querySelector('#case-study .swiper-scrollbar');
-  let caseStudyMain = document.querySelector('#case-study .case-studies');
-  let caseStudyContent = document.querySelector('#case-study .content');
-  let sectionContent = gsap.utils.toArray(".content .animate")
 
   const caseStudyTl = gsap.timeline({
     scrollTrigger: {
@@ -435,4 +533,23 @@ $(function () {
       opacity: 0,
       y: 100
     }, "+=2")
+
+    // Image Scroll Skew
+    // let proxy = { skew: 0 },
+    // skewSetter = gsap.quickSetter("section img", "skewY", "deg"),
+    // clamp = gsap.utils.clamp(-5, 5);
+
+    // ScrollTrigger.create({
+    //   onUpdate: (self) => {
+    //     let skew = clamp(self.getVelocity() / -100);
+    //     // only do something if the skew is MORE severe. Remember, we're always tweening back to 0, so if the user slows their scrolling quickly, it's more natural to just let the tween handle that smoothly rather than jumping to the smaller skew.
+    //     if (Math.abs(skew) > Math.abs(proxy.skew)) {
+    //       proxy.skew = skew;
+    //       gsap.to(proxy, {skew: 0, duration: 0.8, ease: "power3", overwrite: true, onUpdate: () => skewSetter(proxy.skew)});
+    //     }
+    //   }
+    // });
+
+    // gsap.set("section img", {transformOrigin: "right center", force3D: true});
+
 });

@@ -108,7 +108,8 @@ section {
 }
 
 .section-half {
-    min-height: 50vh!important;
+    padding: 0px 0 100px;
+    /* min-height: 50vh!important; */
 }
 
 .section-title {
@@ -434,7 +435,7 @@ header nav .arrow {
 }
 
 .video-bg {
-    position: absolute;
+    position: fixed;
     left: 0;
     bottom: 0;
     width: 100vw;
@@ -900,4 +901,13 @@ footer.social a {
 }
 .swiper-slide:hover {
     cursor: move;
+}
+#dashboard {
+    position: relative;
+}
+#dashboard .section-title {
+    position: absolute;
+    top: 0;
+    /* top: 50%; */
+    /* transform: translate(-50%, -50%); */
 }

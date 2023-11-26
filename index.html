@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
   <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
   <link href="src/css/main.css" rel="stylesheet" />
+  <link href="src/scss/main.css" rel="stylesheet" />
   
   <!-- CDN Link Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
@@ -58,7 +59,13 @@
   <!-- End Header Menu -->
 
   <span id="cursor-info">aa</span>
-
+  
+  <section class="video-bg">
+    <video id="video-bg" autoplay loop muted>
+      <source src="src/videos/bg.mp4" type="video/mp4" />
+    </video>
+  </section>
+  
   <!-- Start Words -->
   
   <!-- Unignorable 
@@ -75,11 +82,6 @@
   
   Give us a shout! -->
   <section class="centered phrase-3 scene one-by-one overflow-hidden">
-    <section class="video-bg">
-      <video id="video-bg" autoplay loop muted>
-        <source src="src/videos/bg.mp4" type="video/mp4" />
-      </video>
-    </section>
     <div style="
           opacity: 1;
           transform: perspective(100px) translateZ(00px) translateY(-70px);
@@ -179,18 +181,18 @@
   </section> -->
 
   <!-- Start Dashboard -->
-  <!-- <section id="dashboard">
+  <section id="dashboard" class="overflow-x-hidden">
     <div class="section-title mx-5 mb-3 ">
-      <h2 class="title stroke stroke-1 stroke-yellow fs-7 f-hanson">
+      <h2 class="title fs-7 f-hanson">
         C2 Native
       </h2>
     </div>
-    <div class="mx-5 flex-grow-1 d-flex">
-      <div class="col-lg-4 content d-flex flex-column">
+    <div class="row mx-5 d-flex align-items-center h-100">
+      <div class="col-lg-4 content flex-column fade-content">
         <p>C2 Native was born in the digital age to streamline data-driven communication</p>
         <p>It now is tasked with amplifying business expansions by harnessing essential contemporary marketing expertise.</p>
 
-        <footer class="social mt-auto">
+        <footer class="social mt-auto pb-0">
           <h6 class="d-inline align-middle">Connect</h6>
           <ul class="inline-list social-icons d-inline align-middle">
             <li class="list-inline-item">
@@ -208,13 +210,82 @@
           </ul>
         </footer>
       </div>
-      <div class="col-lg-8"></div>
+      <div class="col-lg-8 fade-content">
+        <div class="dashboard-expand">
+          <div class="dashboard-expand__main text-center">
+            <img src="/src/images/dashboard.svg" alt="">
+          </div>
+          <div class="dashboard-expand__functions">
+            
+            <div class="dashboard-expand__item">
+              <div class="dashboard-expand__header d-flex justify-content-between align-items-center">
+                <div class="dashboard-expand__title">Feature 1</div>
+                <div class="dashboard-expand__expand"></div>
+              </div>
+              <div class="dashboard-expand__content">
+                <h4>Return on Investment (ROI)</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam recusandae animi unde nemo, voluptate iure architecto, consequuntur impedit enim nesciunt id. Rem nam sint ad minus cum officia maiores nemo.</p>
+              </div>
+            </div>
+            <div class="dashboard-expand__item">
+              <div class="dashboard-expand__header d-flex justify-content-between align-items-center">
+                <div class="dashboard-expand__title">Feature 2</div>
+                <div class="dashboard-expand__expand"></div>
+              </div>
+              <div class="dashboard-expand__content">
+                <h4>Return on Investment (ROI)</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam recusandae animi unde nemo, voluptate iure architecto, consequuntur impedit enim nesciunt id. Rem nam sint ad minus cum officia maiores nemo.</p>
+              </div>
+            </div>
+            <div class="dashboard-expand__item">
+              <div class="dashboard-expand__header d-flex justify-content-between align-items-center">
+                <div class="dashboard-expand__title">Feature 3</div>
+                <div class="dashboard-expand__expand"></div>
+              </div>
+              <div class="dashboard-expand__content">
+                <h4>Return on Investment (ROI)</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam recusandae animi unde nemo, voluptate iure architecto, consequuntur impedit enim nesciunt id. Rem nam sint ad minus cum officia maiores nemo.</p>
+              </div>
+            </div>
+            <div class="dashboard-expand__item">
+              <div class="dashboard-expand__header d-flex justify-content-between align-items-center">
+                <div class="dashboard-expand__title">Feature 4</div>
+                <div class="dashboard-expand__expand"></div>
+              </div>
+              <div class="dashboard-expand__content">
+                <h4>Return on Investment (ROI)</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam recusandae animi unde nemo, voluptate iure architecto, consequuntur impedit enim nesciunt id. Rem nam sint ad minus cum officia maiores nemo.</p>
+              </div>
+            </div>
+            <div class="dashboard-expand__item">
+              <div class="dashboard-expand__header d-flex justify-content-between align-items-center">
+                <div class="dashboard-expand__title">Feature 5</div>
+                <div class="dashboard-expand__expand"></div>
+              </div>
+              <div class="dashboard-expand__content">
+                <h4>Return on Investment (ROI)</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam recusandae animi unde nemo, voluptate iure architecto, consequuntur impedit enim nesciunt id. Rem nam sint ad minus cum officia maiores nemo.</p>
+              </div>
+            </div>
+            <div class="dashboard-expand__item">
+              <div class="dashboard-expand__header d-flex justify-content-between align-items-center">
+                <div class="dashboard-expand__title">Feature 6</div>
+                <div class="dashboard-expand__expand"></div>
+              </div>
+              <div class="dashboard-expand__content">
+                <h4>Return on Investment (ROI)</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam recusandae animi unde nemo, voluptate iure architecto, consequuntur impedit enim nesciunt id. Rem nam sint ad minus cum officia maiores nemo.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </section> -->
+  </section>
   <!-- End Dashboard -->
 
   <!-- Start Case Studies -->
-  <!-- <section id="case-study" class="overflow-x-hidden swiper mySwiper w-100">
+  <section id="case-study" class="overflow-x-hidden swiper mySwiper w-100">
     <div class="section-title mx-5 mb-3">
       <h2 class="title stroke stroke-1 stroke-yellow fs-7 f-hanson">
         C2 X
@@ -262,7 +333,7 @@
         </div>
       </div>
     </div>
-  </section> -->
+  </section>
   <!-- End Case Studies -->
 
   <!-- Start Partners -->
@@ -740,7 +811,7 @@
   </section>
   <!-- End Alliances -->
 
-  <div class="contact overflow-x-hidden section-half d-flex align-items-center">
+  <div id="contact" class="contact overflow-x-hidden section-half d-flex align-items-center">
     <ul class="list-inline overflow-x-visibe d-flex">
       <li class="list-inline-item text-nowrap"><h2 class="fs-7 f-hanson">Let's talk<span class="arrow-upright"></span></h2></li>
       <li class="list-inline-item text-nowrap"><h2 class="fs-7 f-hanson"><a href="mailto:business@c2comms.cx" class="stroke stroke-1 stroke-white text-decoration-none">business@c2comms.cx</a><span class="arrow-upright"></span></h2></li>
