@@ -232,13 +232,6 @@ header nav .cta-button {
     font-family: 'Hanson', Arial, Helvetica, sans-serif;
 }
 
-header nav hr {
-    background-color: var(--black-1);
-    width: 90%;
-    height: 1.2px;
-    opacity: 1;
-}
-
 header nav .close,
 .arrow,
 .work-video .close,

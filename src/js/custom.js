@@ -55,12 +55,12 @@ $(function () {
   })
   .to(menuNav, {
     opacity: 1
-  }, "-=0.25")
+  }, "-=0.5")
   .from(menuItems, {
     opacity: 0,
     x: 100,
     stagger: 0.15
-  }, "-=0.5")
+  }, "-=1")
 
   function showNavWindow() {
     menuExpand.play()
@@ -224,6 +224,7 @@ $(function () {
   showVideo.forEach((video, i) => {
     video.addEventListener("click", function () {
       workVideo[i].classList.add("active");
+      workVideo[i].querySelector('video').play();
       setTimeout(() => {
         workVideo[i].children.item(3).classList.add("active");
       }, 800);
@@ -238,6 +239,7 @@ $(function () {
   closeWorkVideo.forEach((close, i) => {
     close.addEventListener("click", function () {
       workVideo[i].classList.remove("active");
+      workVideo[i].querySelector('video').pause();
       setTimeout(() => {
         workVideo[i].children.item(3).classList.remove("active");
       }, 1000);
