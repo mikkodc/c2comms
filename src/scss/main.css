@@ -301,8 +301,8 @@ header nav .close,
   height: 100vh !important;
   overflow-y: scroll;
   display: none;
-  z-index: 999;
-  background: rgba(0, 0, 0, 0.145);
+  z-index: 99;
+  background: rgba(0, 0, 0, 0.145) url(../images/gradient.jpg) center/cover no-repeat;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
@@ -311,6 +311,13 @@ header nav .close,
 }
 #people-info .info.active {
   display: block;
+}
+#people-info .close {
+  z-index: 99999;
+  position: absolute;
+  right: 20px;
+  top: 200px;
+  font-family: "hanson";
 }
 
 .partners ul {
@@ -369,6 +376,15 @@ header nav .close,
     line-height: 30px;
   }
   section {
+    height: auto !important;
+    min-height: 0 !important;
     padding: 50px 0 !important;
+  }
+  .case-studies {
+    height: 540px !important;
+    display: block;
+  }
+  #dashboard {
+    height: 600px !important;
   }
 }/*# sourceMappingURL=main.css.map */

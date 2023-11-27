@@ -99,7 +99,9 @@ img {
 }
 
 section {
-    height: calc(100vh - 156px);
+    /* min-height: 800px;
+    height: calc(100vh - 156px); */
+    min-height: calc(100vh - 156px);
     padding: 100px 0!important;
     display: flex;
     flex-direction: column;
