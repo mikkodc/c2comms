@@ -11,7 +11,6 @@ $(function () {
 
   gsap.from(headerMain, {
     opacity: 0,
-    y: -100,
     scrollTrigger: {
       trigger: "#feat-work",
       start: "top center",
@@ -135,7 +134,7 @@ $(function () {
     },
     perspective: { value: [100, 100] },
     translateZ: [0, 70],
-    translateY: 100,
+    translateY: 50,
     duration: 2000,
     easing: "linear",
   });
@@ -312,7 +311,7 @@ $(function () {
   var swiper = new Swiper(".mySwiper", {
     slidesPerView: "auto",
     spaceBetween: 15,
-    autoHeight: true,
+    // autoHeight: true,
     scrollbar: {
       el: '.swiper-scrollbar',
       draggable: true,

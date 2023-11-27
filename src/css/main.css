@@ -79,7 +79,6 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* height: 100vh; */
 }
 
 /* colors */
@@ -100,7 +99,7 @@ img {
 }
 
 section {
-    min-height: calc(100vh - 156px);
+    height: calc(100vh - 156px);
     padding: 100px 0!important;
     display: flex;
     flex-direction: column;
@@ -404,15 +403,16 @@ section {
 }
 
 .feat-work {
-    height: 100vh;
-    position: relative;
+    /* height: 100vh; */
+    /* position: relative; */
 }
 .feat-work .swiper {
-    height: 450px;
+    /* height: 550px; */
+    /* overflow-y: visible!important; */
 }
-.feat-work .swiper-scrollbar {
+/* .feat-work .swiper-scrollbar {
     bottom: 15px !important;
-}
+} */
 
 /* .feat-videos {
     overflow-y: hidden;
@@ -591,71 +591,10 @@ section {
     border-radius: 150px;
 }
 
-#feat-people img {
-    width: 340px;
-    height: 450px;
-    object-fit: cover;
-}
 
-#feat-people .team-title {
-
-}
-
-#feat-people .team-designation {
-    font-size: 18px;
-    line-height: 22px;
-    font-weight: 400;
-}
-.partners ul {
-    margin-top: 72px;
-    margin-bottom: 112px;
-}
-.partners ul li button {
-    font-size: 36px;
-    line-height: 43px;
-    opacity: 0.5;
-    color: #fff;
-}
-.partners ul li button.active,
-.partners ul li button:hover {
-    opacity: 1;
-    color: #fff;
-}
 .list-inline-item:not(:last-child) {
     margin-right: 40px;
 }
-.partner {
-    margin-top: 5%;
-    max-width: 1020px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    align-items: center;
-    column-gap: 35px;
-    row-gap: 60px;
-}
-.partner img {
-    max-width: 250px;
-    opacity: 1;
-}
-.partner img,
-.alliance img {
-    filter: grayscale(1);
-}
-
-.alliance {
-    margin-top: 5%;
-    max-width: 1770px;
-    /* display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    align-items: center; */
-    column-gap: 30px;
-    row-gap: 40px;
-}
-.alliance img {
-    max-width: 270px;
-    opacity: 1;
-}
-
 .arrow-upright {
     display: inline-block;
     vertical-align: middle;
@@ -709,29 +648,7 @@ footer {
     padding-top: 80px;
 }
 
-#people-info {
-    padding: 100px 0;
-    padding-top: 200px!important;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh!important;
-    overflow-y: scroll;
-    display: none;
-    z-index: 999;
-    background: rgba(0, 0, 0, 0.145);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    /* overflow: hidden; */
-}
 
-#people-info .info {
-    display: none;
-}
-#people-info .info.active {
-    display: block;
-}
 .partner-reveal,
 .alliance-reveal {
     position: relative;
@@ -755,7 +672,7 @@ footer {
     background: #fff!important;
     border-radius: 0!important;
     height: 1px!important;
-    bottom: 0px!important;
+    margin-bottom: 15px;
 }
 .swiper-scrollbar-drag {
     background: #fff!important;
@@ -775,68 +692,6 @@ footer.social h6 {
 footer.social a {
     color: #fff;
     font-size: 32px;
-}
-.case-studies {
-    gap: 30px;
-    position: relative;
-    max-height: 680px;
-}
-.case-studies__card {
-    width: 570px;
-    border-radius: 30px;
-    background-color: #d9d9d9;
-    padding: 53px 45px;
-    position: absolute;
-    left: calc(50% - 20px);
-    transform: translateX(-200px);
-    z-index: 1;
-}
-.case-studies__card:nth-child(2) {
-    left: 50%;
-    background-color: #434343;
-    z-index: 0;
-}
-.case-studies__card:nth-child(3) {
-    left: calc(50% + 20px);
-    background-color: #8D8D8D;
-    z-index: -1;
-}
-.case-studies__card:nth-child(4) {
-    left: calc(50% + 40px);
-    background-color: #ADADAD;
-    z-index: -2;
-}
-.case-studies__header {
-    color: #000;
-}
-.case-studies__title {
-    font-size: 30px;
-    line-height: 36px;
-    text-transform: uppercase;
-}
-.case-studies__category {
-    font-weight: 300;
-    font-size: 24px;
-    line-height: 38px;
-}
-.case-studies__read {
-    background-color: #fff;
-    padding: 8px;
-    border-radius: 8px;
-    font-size: 20px;
-    line-height: 24px;
-    color: #000;
-}
-.case-studies__read::after {
-    content: '';
-    position: relative;
-    display: inline-block;
-    vertical-align: middle;
-    margin-left:8px;
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    background-color: #8d8d8d;
 }
 .swiper-slide:hover {
     cursor: move;
