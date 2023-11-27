@@ -21,7 +21,7 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
 </head>
 
-<body>
+<body class="overflow-x-hidden">
 
   <!-- Start Header Menu -->
   <header>
@@ -31,29 +31,43 @@
           <img src="src/images/c2-logo.png" alt="C2 logo" />
         </a>
       </div>
-      <div class="menu-button d-flex justify-content-between align-items-center">
-        <div class="me-2">menu</div>
-        <div class="d-flex flex-column align-items-end">
-          <span></span>
-          <span class="mt-1"></span>
-          <span class="mt-1"></span>
+      <div class="menu-button">
+        <div class="menu-button__wrapper d-flex justify-content-between align-items-center">
+          <div class="me-2">menu</div>
+          <div class="d-flex flex-column align-items-end">
+            <span></span>
+            <span class="mt-1"></span>
+            <span class="mt-1"></span>
+          </div>
         </div>
+        <nav class="d-flex flex-column text-center">
+          <!-- <span class="close">X</span> -->
+          <ul class="list-unstyled mb-0">
+            <li class="animate"><a href="#">our work</a></li>
+            <li class="animate"><a href="#">our team</a></li>
+            <li class="animate"><a href="#">C2 native</a></li>
+            <li class="animate"><a href="#">C2 next</a></li>
+            <li class="animate"><a href="#">contact us</a></li>
+          </ul>
+          
+          <div class="social pb-0 animate mt-5">
+            <ul class="inline-list social-icons d-inline align-middle p-0 mt-5">
+              <li class="list-inline-item">
+                <a class="icon-fallback-text" href="https://twitter.com/" title="on Twitter">
+                  <i class="fab fa-instagram" aria-hidden="true"></i>
+                </a>
+              </li>
+    
+              <li class="list-inline-item">
+                <a class="icon-fallback-text" href="https://linkedin.com/" title="on LinkedIn">
+                  <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                </a>
+              </li>
+    
+            </ul>
+          </div>
+        </nav>
       </div>
-      <nav class="d-flex flex-column opacity-0 invisible">
-        <!-- <span class="close">X</span> -->
-        <ul class="list-unstyled mb-0">
-          <li><a href="#">Our Work</a></li>
-          <li><a href="#">Our Team</a></li>
-          <li><a href="#">C2 Native</a></li>
-          <li><a href="#">C2 Next</a></li>
-          <li><a href="#">Contact Us</a></li>
-        </ul>
-        
-        <a href="#" class="fw-bold d-flex align-items-center cta-button">
-          Let's talk
-          <span class="arrow-upright arrow-upright--black-outline arrow-upright--sm"></span>
-        </a>
-      </nav>
     </div>
   </header>
   <!-- End Header Menu -->
@@ -336,179 +350,6 @@
   </section>
   <!-- End Case Studies -->
 
-  <!-- Start Partners -->
-  <section class="partners centered">
-    <h2 class="title f-hanson text-uppercase">Our partners</h2>
-
-    <ul class="nav justify-content-center" id="myTab" role="tablist">
-      <li class="nav-item" role="presentation">
-        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#automotive" type="button" role="tab">Automotive</button>
-      </li>
-      <li class="nav-item" role="presentation">
-        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#education" type="button" role="tab">Education</button>
-      </li>
-      <li class="nav-item" role="presentation">
-        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#fmcg" type="button" role="tab">FMCG</button>
-      </li>
-      <li class="nav-item" role="presentation">
-        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#governmental" type="button" role="tab">Governmental</button>
-      </li>
-      <li class="nav-item" role="presentation">
-        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#health" type="button" role="tab">Health</button>
-      </li>
-      <li class="nav-item" role="presentation">
-        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#retail" type="button" role="tab">Retail</button>
-      </li>
-    </ul>
-    <div class="tab-content">
-      <div class="tab-pane fade show active" id="automotive" role="tabpanel">
-        <div class="container-small">
-          <div class="partner">
-            <div class="partner-reveal">
-              <div class="reveal-block"></div>
-              <img src="/src/images/partners/porsche.png" alt=""></div>
-            <div class="partner-reveal">
-              <div class="reveal-block"></div>
-              <img src="/src/images/partners/maserati.png" alt=""></div>
-            <div class="partner-reveal">
-              <div class="reveal-block"></div>
-              <img src="/src/images/partners/ferrari.png" alt=""></div>
-            <div class="partner-reveal">
-              <div class="reveal-block"></div>
-              <img src="/src/images/partners/ana.png" alt=""></div>
-            <div class="partner-reveal">
-              <div class="reveal-block"></div>
-              <img src="/src/images/partners/lamborghini.png" alt=""></div>
-            <div class="partner-reveal">
-              <div class="reveal-block"></div>
-              <img src="/src/images/partners/mg.png" alt=""></div>
-          </div>
-        </div>
-      </div>
-      <div class="tab-pane fade" id="education" role="tabpanel">
-        <div class="container-small">
-          <div class="partner">
-            <div class="partner-reveal">
-              <div class="reveal-block"></div>
-              <img src="/src/images/partners/porsche.png" alt=""></div>
-            <div class="partner-reveal">
-              <div class="reveal-block"></div>
-              <img src="/src/images/partners/maserati.png" alt=""></div>
-            <div class="partner-reveal">
-              <div class="reveal-block"></div>
-              <img src="/src/images/partners/ferrari.png" alt=""></div>
-            <div class="partner-reveal">
-              <div class="reveal-block"></div>
-              <img src="/src/images/partners/ana.png" alt=""></div>
-            <div class="partner-reveal">
-              <div class="reveal-block"></div>
-              <img src="/src/images/partners/lamborghini.png" alt=""></div>
-            <div class="partner-reveal">
-              <div class="reveal-block"></div>
-              <img src="/src/images/partners/mg.png" alt=""></div>
-          </div>
-        </div>
-      </div>
-      <div class="tab-pane fade" id="fmcg" role="tabpanel">
-        <div class="container-small">
-          <div class="partner">
-            <div class="partner-reveal">
-              <div class="reveal-block"></div>
-              <img src="/src/images/partners/porsche.png" alt=""></div>
-            <div class="partner-reveal">
-              <div class="reveal-block"></div>
-              <img src="/src/images/partners/maserati.png" alt=""></div>
-            <div class="partner-reveal">
-              <div class="reveal-block"></div>
-              <img src="/src/images/partners/ferrari.png" alt=""></div>
-            <div class="partner-reveal">
-              <div class="reveal-block"></div>
-              <img src="/src/images/partners/ana.png" alt=""></div>
-            <div class="partner-reveal">
-              <div class="reveal-block"></div>
-              <img src="/src/images/partners/lamborghini.png" alt=""></div>
-            <div class="partner-reveal">
-              <div class="reveal-block"></div>
-              <img src="/src/images/partners/mg.png" alt=""></div>
-          </div>
-        </div>
-      </div>
-      <div class="tab-pane fade" id="governmental" role="tabpanel">
-        <div class="container-small">
-          <div class="partner">
-            <div class="partner-reveal">
-              <div class="reveal-block"></div>
-              <img src="/src/images/partners/porsche.png" alt=""></div>
-            <div class="partner-reveal">
-              <div class="reveal-block"></div>
-              <img src="/src/images/partners/maserati.png" alt=""></div>
-            <div class="partner-reveal">
-              <div class="reveal-block"></div>
-              <img src="/src/images/partners/ferrari.png" alt=""></div>
-            <div class="partner-reveal">
-              <div class="reveal-block"></div>
-              <img src="/src/images/partners/ana.png" alt=""></div>
-            <div class="partner-reveal">
-              <div class="reveal-block"></div>
-              <img src="/src/images/partners/lamborghini.png" alt=""></div>
-            <div class="partner-reveal">
-              <div class="reveal-block"></div>
-              <img src="/src/images/partners/mg.png" alt=""></div>
-          </div>
-        </div>
-      </div>
-      <div class="tab-pane fade" id="health" role="tabpanel">
-        <div class="container-small">
-          <div class="partner">
-            <div class="partner-reveal">
-              <div class="reveal-block"></div>
-              <img src="/src/images/partners/porsche.png" alt=""></div>
-            <div class="partner-reveal">
-              <div class="reveal-block"></div>
-              <img src="/src/images/partners/maserati.png" alt=""></div>
-            <div class="partner-reveal">
-              <div class="reveal-block"></div>
-              <img src="/src/images/partners/ferrari.png" alt=""></div>
-            <div class="partner-reveal">
-              <div class="reveal-block"></div>
-              <img src="/src/images/partners/ana.png" alt=""></div>
-            <div class="partner-reveal">
-              <div class="reveal-block"></div>
-              <img src="/src/images/partners/lamborghini.png" alt=""></div>
-            <div class="partner-reveal">
-              <div class="reveal-block"></div>
-              <img src="/src/images/partners/mg.png" alt=""></div>
-          </div>
-        </div>
-      </div>
-      <div class="tab-pane fade" id="retail" role="tabpanel">
-        <div class="container-small">
-          <div class="partner">
-            <div class="partner-reveal">
-              <div class="reveal-block"></div>
-              <img src="/src/images/partners/porsche.png" alt=""></div>
-            <div class="partner-reveal">
-              <div class="reveal-block"></div>
-              <img src="/src/images/partners/maserati.png" alt=""></div>
-            <div class="partner-reveal">
-              <div class="reveal-block"></div>
-              <img src="/src/images/partners/ferrari.png" alt=""></div>
-            <div class="partner-reveal">
-              <div class="reveal-block"></div>
-              <img src="/src/images/partners/ana.png" alt=""></div>
-            <div class="partner-reveal">
-              <div class="reveal-block"></div>
-              <img src="/src/images/partners/lamborghini.png" alt=""></div>
-            <div class="partner-reveal">
-              <div class="reveal-block"></div>
-              <img src="/src/images/partners/mg.png" alt=""></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- End Partners -->
-
   <!-- Start People Info -->
   <section id="people-info" class="">
 
@@ -695,49 +536,49 @@
       <div class="col swiper-slide">
         <div class="showTeam">
           <img src="/src/images/roy.jpg" alt="">
-          <h3 class="team-title mt-4">Roy Aftimos</h3>
+          <h3 class="team-title mt-4 mb-3">Roy Aftimos</h3>
           <h4 class="team-designation">CEO</h4>
         </div>
       </div>
       <div class="col swiper-slide">
         <div class="showTeam">
           <img src="/src/images/samer.jpg" alt="">
-          <h3 class="team-title mt-4">Samer Qaqish</h3>
+          <h3 class="team-title mt-4 mb-3">Samer Qaqish</h3>
           <h4 class="team-designation">General Manager</h4>
         </div>
       </div>
       <div class="col swiper-slide">
         <div class="showTeam">
           <img src="/src/images/taniya.jpg" alt="">
-          <h3 class="team-title mt-4">Taniya</h3>
+          <h3 class="team-title mt-4 mb-3">Taniya</h3>
           <h4 class="team-designation">HR Director</h4>
         </div>
       </div>
       <div class="col swiper-slide">
         <div class="showTeam">
           <img src="/src/images/zahir.jpg" alt="">
-          <h3 class="team-title mt-4">Zahir Mirza</h3>
+          <h3 class="team-title mt-4 mb-3">Zahir Mirza</h3>
           <h4 class="team-designation">Executive Creative Director</h4>
         </div>
       </div>
       <div class="col swiper-slide">
         <div class="showTeam">
           <img src="/src/images/nair.jpg" alt="">
-          <h3 class="team-title mt-4">Nair</h3>
+          <h3 class="team-title mt-4 mb-3">Nair</h3>
           <h4 class="team-designation">Finance Director</h4>
         </div>
       </div>
       <div class="col swiper-slide">
         <div class="showTeam">
           <img src="/src/images/layal.jpg" alt="">
-          <h3 class="team-title mt-4">Layal Elsayed</h3>
+          <h3 class="team-title mt-4 mb-3">Layal Elsayed</h3>
           <h4 class="team-designation">Business Director</h4>
         </div>
       </div>
       <div class="col swiper-slide">
         <div class="showTeam">
           <img src="/src/images/suraj.jpg" alt="">
-          <h3 class="team-title mt-4">Suraj Sadeesh</h3>
+          <h3 class="team-title mt-4 mb-3">Suraj Sadeesh</h3>
           <h4 class="team-designation">Strategic Growth Director</h4>
         </div>
       </div>
@@ -745,6 +586,215 @@
     <div class="swiper-scrollbar"></div>
   </section>
   <!-- End Featured People -->
+
+  
+
+  <!-- Start Featured People -->
+  <section id="locations" class="overflow-x-hidden">
+    <div class="section-title mx-5 mb-3">
+      <h2 class="title stroke stroke-1 stroke-yellow fs-7 f-hanson mb-0 text-uppercase">
+        Our Location
+      </h2>
+    </div>
+    
+    <div class="d-flex location__wrapper gx-5 mx-5">
+      <div class="col location__item">
+        <img src="/src/images/locations/dubai.jpg" alt="">
+        <h3 class="location__title mt-4 mb-3">Dubai</h3>
+        <p class="location__description">Barsha 3, 39th Street,Behind Saudi German Hospital Dubai, United Arab Emirates</p>
+      </div>
+      <div class="col location__item">
+        <img src="/src/images/locations/riyadh.jpg" alt="">
+        <h3 class="location__title mt-4 mb-3">Riyadh</h3>
+        <p class="location__description">3141 Anas Bin Malik, Al Malqa Dist. Riyadh, 
+          Kingdom of Saudi Arabia</p>
+      </div>
+      <div class="col location__item">
+        <img src="/src/images/locations/india.jpg" alt="">
+        <h3 class="location__title mt-4 mb-3">India</h3>
+        <p class="location__description">Mehtas Green Park Apt, Madhavaram Milk Colony, Chennai, India</p>
+      </div>
+      <div class="col location__item">
+        <img src="/src/images/locations/spatial.jpg" alt="">
+        <h3 class="location__title mt-4 mb-3">Spatial</h3>
+        <p class="location__description">spatial.io</p>
+      </div>
+    </div>
+  </section>
+  <!-- End Featured People -->
+
+  <!-- Start Partners -->
+  <section class="partners centered">
+    <h2 class="title f-hanson text-uppercase">Our partners</h2>
+
+    <ul class="nav justify-content-center" id="myTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#automotive" type="button" role="tab">Automotive</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#education" type="button" role="tab">Education</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#fmcg" type="button" role="tab">FMCG</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#governmental" type="button" role="tab">Governmental</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#health" type="button" role="tab">Health</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#retail" type="button" role="tab">Retail</button>
+      </li>
+    </ul>
+    <div class="tab-content">
+      <div class="tab-pane fade show active" id="automotive" role="tabpanel">
+        <div class="container-small">
+          <div class="partner">
+            <div class="partner-reveal">
+              <div class="reveal-block"></div>
+              <img src="/src/images/partners/porsche.png" alt=""></div>
+            <div class="partner-reveal">
+              <div class="reveal-block"></div>
+              <img src="/src/images/partners/maserati.png" alt=""></div>
+            <div class="partner-reveal">
+              <div class="reveal-block"></div>
+              <img src="/src/images/partners/ferrari.png" alt=""></div>
+            <div class="partner-reveal">
+              <div class="reveal-block"></div>
+              <img src="/src/images/partners/ana.png" alt=""></div>
+            <div class="partner-reveal">
+              <div class="reveal-block"></div>
+              <img src="/src/images/partners/lamborghini.png" alt=""></div>
+            <div class="partner-reveal">
+              <div class="reveal-block"></div>
+              <img src="/src/images/partners/mg.png" alt=""></div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="education" role="tabpanel">
+        <div class="container-small">
+          <div class="partner">
+            <div class="partner-reveal">
+              <div class="reveal-block"></div>
+              <img src="/src/images/partners/porsche.png" alt=""></div>
+            <div class="partner-reveal">
+              <div class="reveal-block"></div>
+              <img src="/src/images/partners/maserati.png" alt=""></div>
+            <div class="partner-reveal">
+              <div class="reveal-block"></div>
+              <img src="/src/images/partners/ferrari.png" alt=""></div>
+            <div class="partner-reveal">
+              <div class="reveal-block"></div>
+              <img src="/src/images/partners/ana.png" alt=""></div>
+            <div class="partner-reveal">
+              <div class="reveal-block"></div>
+              <img src="/src/images/partners/lamborghini.png" alt=""></div>
+            <div class="partner-reveal">
+              <div class="reveal-block"></div>
+              <img src="/src/images/partners/mg.png" alt=""></div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="fmcg" role="tabpanel">
+        <div class="container-small">
+          <div class="partner">
+            <div class="partner-reveal">
+              <div class="reveal-block"></div>
+              <img src="/src/images/partners/porsche.png" alt=""></div>
+            <div class="partner-reveal">
+              <div class="reveal-block"></div>
+              <img src="/src/images/partners/maserati.png" alt=""></div>
+            <div class="partner-reveal">
+              <div class="reveal-block"></div>
+              <img src="/src/images/partners/ferrari.png" alt=""></div>
+            <div class="partner-reveal">
+              <div class="reveal-block"></div>
+              <img src="/src/images/partners/ana.png" alt=""></div>
+            <div class="partner-reveal">
+              <div class="reveal-block"></div>
+              <img src="/src/images/partners/lamborghini.png" alt=""></div>
+            <div class="partner-reveal">
+              <div class="reveal-block"></div>
+              <img src="/src/images/partners/mg.png" alt=""></div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="governmental" role="tabpanel">
+        <div class="container-small">
+          <div class="partner">
+            <div class="partner-reveal">
+              <div class="reveal-block"></div>
+              <img src="/src/images/partners/porsche.png" alt=""></div>
+            <div class="partner-reveal">
+              <div class="reveal-block"></div>
+              <img src="/src/images/partners/maserati.png" alt=""></div>
+            <div class="partner-reveal">
+              <div class="reveal-block"></div>
+              <img src="/src/images/partners/ferrari.png" alt=""></div>
+            <div class="partner-reveal">
+              <div class="reveal-block"></div>
+              <img src="/src/images/partners/ana.png" alt=""></div>
+            <div class="partner-reveal">
+              <div class="reveal-block"></div>
+              <img src="/src/images/partners/lamborghini.png" alt=""></div>
+            <div class="partner-reveal">
+              <div class="reveal-block"></div>
+              <img src="/src/images/partners/mg.png" alt=""></div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="health" role="tabpanel">
+        <div class="container-small">
+          <div class="partner">
+            <div class="partner-reveal">
+              <div class="reveal-block"></div>
+              <img src="/src/images/partners/porsche.png" alt=""></div>
+            <div class="partner-reveal">
+              <div class="reveal-block"></div>
+              <img src="/src/images/partners/maserati.png" alt=""></div>
+            <div class="partner-reveal">
+              <div class="reveal-block"></div>
+              <img src="/src/images/partners/ferrari.png" alt=""></div>
+            <div class="partner-reveal">
+              <div class="reveal-block"></div>
+              <img src="/src/images/partners/ana.png" alt=""></div>
+            <div class="partner-reveal">
+              <div class="reveal-block"></div>
+              <img src="/src/images/partners/lamborghini.png" alt=""></div>
+            <div class="partner-reveal">
+              <div class="reveal-block"></div>
+              <img src="/src/images/partners/mg.png" alt=""></div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="retail" role="tabpanel">
+        <div class="container-small">
+          <div class="partner">
+            <div class="partner-reveal">
+              <div class="reveal-block"></div>
+              <img src="/src/images/partners/porsche.png" alt=""></div>
+            <div class="partner-reveal">
+              <div class="reveal-block"></div>
+              <img src="/src/images/partners/maserati.png" alt=""></div>
+            <div class="partner-reveal">
+              <div class="reveal-block"></div>
+              <img src="/src/images/partners/ferrari.png" alt=""></div>
+            <div class="partner-reveal">
+              <div class="reveal-block"></div>
+              <img src="/src/images/partners/ana.png" alt=""></div>
+            <div class="partner-reveal">
+              <div class="reveal-block"></div>
+              <img src="/src/images/partners/lamborghini.png" alt=""></div>
+            <div class="partner-reveal">
+              <div class="reveal-block"></div>
+              <img src="/src/images/partners/mg.png" alt=""></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Partners -->
 
   <!-- Start Alliances -->
   <section class="alliances centered">

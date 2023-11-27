@@ -1,3 +1,17 @@
+.location {
+  &__wrapper {
+    column-gap: 67px;
+  }
+  &__title {
+    font-size: 60px;
+    line-height: 66px;
+    font-weight: 300;
+  }
+  &__description {
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
 .dashboard-expand {
 
   $parent: &;

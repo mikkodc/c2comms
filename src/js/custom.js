@@ -31,12 +31,47 @@ $(function () {
     }
   });
 
+  const menuLabel = document.querySelector(".menu-button__wrapper")
+  const menuItems = gsap.utils.toArray(".menu-button .animate")
+  const menuNav = document.querySelector(".menu-button nav")
+
+  const menuExpand = gsap.timeline({ paused: true })
+  menuExpand.to(menuLabel, {
+    opacity: 0,
+    y: 20,
+    onComplete: function() {
+      menuButton.classList.add('active');
+    }
+  })
+  .to(menuButton, {
+    width: "40%"
+  }, "-=0.25")
+  .to(menuButton, {
+    height: 650
+  })
+  .to(menuNav, {
+    width: "100%",
+    height: "100%",
+  })
+  .to(menuNav, {
+    opacity: 1
+  }, "-=0.25")
+  .from(menuItems, {
+    opacity: 0,
+    x: 100,
+    stagger: 0.15
+  }, "-=0.5")
+
   function showNavWindow() {
-    $("header nav").removeClass("opacity-0 invisible ");
+    menuExpand.play()
+    // $("header nav").removeClass("opacity-0 invisible ");
+
   }
 
   function hideNavWindow() {
-    $("header nav").addClass("opacity-0 invisible");
+    
+    menuExpand.reverse()
+    // $("header nav").addClass("opacity-0 invisible");
   }
 
   const scenes = document.querySelectorAll(".scene");
@@ -262,14 +297,14 @@ $(function () {
   });
 
   // Smooth Scroll
-  const lenis = new Lenis()
+  // const lenis = new Lenis()
 
-  function raf(time) {
-    lenis.raf(time)
-    requestAnimationFrame(raf)
-  }
+  // function raf(time) {
+  //   lenis.raf(time)
+  //   requestAnimationFrame(raf)
+  // }
 
-  requestAnimationFrame(raf)
+  // requestAnimationFrame(raf)
 
 
   // Horizontal Sections

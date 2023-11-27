@@ -1,3 +1,17 @@
+.location__wrapper {
+  -moz-column-gap: 67px;
+       column-gap: 67px;
+}
+.location__title {
+  font-size: 60px;
+  line-height: 66px;
+  font-weight: 300;
+}
+.location__description {
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .dashboard-expand__main {
   position: relative;
 }
