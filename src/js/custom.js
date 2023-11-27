@@ -1,24 +1,23 @@
 $(function () {
+  var headerMain = document.querySelector("header");
   var headerNav = document.querySelector("header nav");
   var menuButton = document.querySelector(".menu-button");
+  var cursorInfo = document.getElementById("cursor-info");
+
   $(".close").on("click", (ev) => {
     hideNavWindow();
   });
 
-  window.addEventListener("scroll", function (ev) {
-    $("header").addClass("opacity-0");
-  });
-
-  var cursorInfo = document.getElementById("cursor-info");
-
-  // hide the header when scroll down
-  $(window).scroll(function () {
-    if ($(window).scrollTop()) {
-      $("header").addClass("opacity-0");
-    } else {
-      $("header").removeClass("opacity-0");
+  gsap.from(headerMain, {
+    opacity: 0,
+    y: -100,
+    scrollTrigger: {
+      trigger: "#feat-work",
+      start: "top center",
+      toggleActions: "restart none none reverse",
     }
-  });
+  })
+
 
   $(".menu-button").on("click", (ev) => {
     showNavWindow();
@@ -55,7 +54,7 @@ $(function () {
   })
   .to(menuNav, {
     opacity: 1
-  }, "-=0.5")
+  }, "-=0.3")
   .from(menuItems, {
     opacity: 0,
     x: 100,
@@ -64,14 +63,11 @@ $(function () {
 
   function showNavWindow() {
     menuExpand.play()
-    // $("header nav").removeClass("opacity-0 invisible ");
 
   }
 
   function hideNavWindow() {
-    
     menuExpand.reverse()
-    // $("header nav").addClass("opacity-0 invisible");
   }
 
   const scenes = document.querySelectorAll(".scene");
@@ -134,8 +130,8 @@ $(function () {
       value: [0, 1],
     },
     perspective: { value: [100, 100] },
-    translateZ: [0, 85],
-    translateY: 5,
+    translateZ: [0, 70],
+    translateY: 100,
     duration: 2000,
     easing: "linear",
   });
@@ -149,7 +145,6 @@ $(function () {
 
   // create a scene for the first section
   new ScrollMagic.Scene({
-    offset: -90,
     duration: document.querySelector(".one-by-one").children.length * 800,
   })
     .setPin(scenes[0])

@@ -100,7 +100,7 @@ img {
 }
 
 section {
-    min-height: 100vh;
+    min-height: calc(100vh - 156px);
     padding: 100px 0!important;
     display: flex;
     flex-direction: column;
@@ -109,13 +109,11 @@ section {
 
 .section-half {
     padding: 0px 0 100px;
-    /* min-height: 50vh!important; */
 }
 
 .section-title {
     padding-bottom: 7px;
     position: relative;
-    /* overflow: hidden; */
 }
 
 .swiper {
@@ -165,74 +163,6 @@ section {
 
 /* custom classes end */
 
-header {
-    transition: var(--transition-3);
-    position: sticky;
-    top: 0px;
-    z-index: 100;
-    padding: 20px 60px;
-}
-
-header .menu-button {
-    cursor: pointer;
-    border-radius: 50px;
-    padding: 8px 20px;
-    border: 2px solid var(--white);
-    position: absolute;
-    top: 40px;
-    right: 60px;
-}
-header .menu-button.active {
-    background: rgba(0, 0, 0, 0.145);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-}
-
-header .menu-button div {
-    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-}
-
-header .menu-button span {
-    background-color: var(--white);
-    display: inline-block;
-    height: 2px;
-    width: 20px;
-    border-radius: 20px;
-}
-
-header nav {
-    opacity: 0;
-    height: 0;
-    width: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 112px 60px 70px ;
-}
-
-header nav a {
-    color: white;
-    text-decoration: none;
-    /* padding: 8px; */
-    font-size: 30px;
-    line-height: 30px;
-}
-
-header nav ul li:not(:last-child) {
-    margin-bottom: 48px;
-}
-
-header nav .cta-button {
-    margin-top: 40px;
-    border-top: 1px solid #fff;
-    padding-top: 20px;
-    font-size: 50px;
-    line-height: 50px;
-    font-weight: 700;
-    font-family: 'Hanson', Arial, Helvetica, sans-serif;
-}
-
-header nav .close,
 .arrow,
 .work-video .close,
 .work-video .vid-status {
@@ -250,7 +180,6 @@ header nav .close,
     transition: var(--transition-3);
 }
 
-header nav .close,
 .work-video .close {
     background-color: var(--black-1);
     right: 60px;
@@ -305,13 +234,6 @@ header nav .close,
     100% {
         background: rgba(255, 255, 255, 0.145);
     }
-}
-
-header nav .arrow {
-    background-color: transparent;
-    color: var(--black-1);
-    right: 50px;
-    transform: unset;
 }
 
 .arrow {
@@ -573,8 +495,9 @@ header nav .arrow {
 }
 
 .one-by-one {
-    transform: translateY(-35vh);
+    padding: 0!important;
     font-family: hanson;
+    height: 100vh!important;
 }
 
 .one-by-one div {
@@ -814,7 +737,7 @@ footer {
     background: #fff!important;
     border-radius: 0!important;
     height: 1px!important;
-    bottom: calc(50% - 300px)!important;
+    bottom: 100px!important;
 }
 .swiper-scrollbar-drag {
     background: #fff!important;
