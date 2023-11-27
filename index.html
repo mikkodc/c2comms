@@ -80,7 +80,6 @@
   </section>
   
   <!-- Start Words -->
-  
   <!-- Unignorable 
   That’s what you want to be
 
@@ -131,12 +130,7 @@
   <!-- End Words -->
 
   <!-- Start Featured Work -->
-  <section id="feat-work" class="feat-work d-flex swiper mySwiper w-100 overflow-x-hidden">
-    <!-- <section class="bg-linear">
-    <video id="bg-linear" autoplay loop muted>
-      <source src="src/videos/bg2.webm" type="video/webm" />
-    </video>
-  </section> -->
+  <section id="feat-work" class="feat-work d-flex overflow-x-hidden">
     <div class="section-title mx-5 mb-3 ">
       <h2 class="title stroke stroke-1 stroke-yellow fs-7 f-hanson">
         Featured Work
@@ -146,53 +140,46 @@
       <p>Aliquam erat volutpat. Ut wisi enim ad minim veniam, quis <br>nostrud exerci tation ullamcorper suscipit
       </p>
     </div>
-    
-    <div class="feat-videos swiper-wrapper">
-      <!-- <div class="slider-shadow"></div>
-      <div class="slider-shadow left"></div> -->
-      <div class="work swiper-slide">
-        <div class="showVideo">
-          <video muted width="100%" poster="src/images/maserati-cover.png">
-            <source src="src/videos/maserati-supers.mp4" type="video/mp4" />
-          </video>
-          <div class="feat-title ms-4">Maserati</div>
+    <div class="swiper mySwiper w-100">
+      <div class="feat-videos swiper-wrapper">
+        <div class="work swiper-slide">
+          <div class="showVideo">
+            <video muted width="100%" poster="src/images/maserati-cover.png">
+              <source src="src/videos/maserati-supers.mp4" type="video/mp4" />
+            </video>
+            <div class="feat-title ms-4">Maserati</div>
+          </div>
+        </div>
+        <div class="work swiper-slide">
+          <div class="showVideo">
+            <video muted width="100%" poster="src/images/lambweston-cover.png">
+              <source src="src/videos/lambweston.mp4" type="video/mp4" />
+            </video>
+            <div class="feat-title">LambWeston</div>
+          </div>
+        </div>
+        <div class="work swiper-slide">
+          <div class="showVideo">
+            <video muted width="100%" poster="src/images/zoom-cover.png">
+              <source src="src/videos/zoom-hotdog.mp4" type="video/mp4" />
+            </video>
+            <div class="feat-title">Zoom HotDog</div>
+          </div>
+        </div>
+        <div class="work swiper-slide">
+          <div class="showVideo">
+            <video muted width="100%" poster="src/images/zoom-cover.png">
+              <source src="src/videos/zoom-hotdog.mp4" type="video/mp4" />
+            </video>
+            <div class="feat-title">Zoom HotDog</div>
+          </div>
         </div>
       </div>
-      <div class="work swiper-slide">
-        <div class="showVideo">
-          <video muted width="100%" poster="src/images/lambweston-cover.png">
-            <source src="src/videos/lambweston.mp4" type="video/mp4" />
-          </video>
-          <div class="feat-title">LambWeston</div>
-        </div>
-      </div>
-      <div class="work swiper-slide">
-        <div class="showVideo">
-          <video muted width="100%" poster="src/images/zoom-cover.png">
-            <source src="src/videos/zoom-hotdog.mp4" type="video/mp4" />
-          </video>
-          <div class="feat-title">Zoom HotDog</div>
-        </div>
-      </div>
-      <div class="work swiper-slide">
-        <div class="showVideo">
-          <video muted width="100%" poster="src/images/zoom-cover.png">
-            <source src="src/videos/zoom-hotdog.mp4" type="video/mp4" />
-          </video>
-          <div class="feat-title">Zoom HotDog</div>
-        </div>
-      </div>
+      <div class="swiper-scrollbar"></div>
     </div>
-    <div class="swiper-scrollbar"></div>
   </section>
   <!-- End Featured Work -->
   
-  <!-- <section class="bg-linear">
-    <video id="bg-linear" autoplay loop muted>
-      <source src="src/videos/bg2.webm" type="video/webm" />
-    </video>
-  </section> -->
-
   <!-- Start Dashboard -->
   <section id="dashboard" class="overflow-x-hidden">
     <div class="section-title mx-5 mb-3 ">
@@ -201,7 +188,7 @@
       </h2>
     </div>
     <div class="row mx-5 d-flex align-items-center h-100">
-      <div class="col-lg-4 content flex-column fade-content">
+      <div class="content flex-column fade-content">
         <p>C2 Native was born in the digital age to streamline data-driven communication</p>
         <p>It now is tasked with amplifying business expansions by harnessing essential contemporary marketing expertise.</p>
 
@@ -219,17 +206,15 @@
                 <i class="fab fa-linkedin-in" aria-hidden="true"></i>
               </a>
             </li>
-  
           </ul>
         </footer>
       </div>
-      <div class="col-lg-8 fade-content">
+      <div class="fade-content">
         <div class="dashboard-expand">
           <div class="dashboard-expand__main text-center">
             <img src="/src/images/dashboard.svg" alt="">
           </div>
           <div class="dashboard-expand__functions">
-            
             <div class="dashboard-expand__item">
               <div class="dashboard-expand__header d-flex justify-content-between align-items-center">
                 <div class="dashboard-expand__title">Feature 1</div>
@@ -351,6 +336,7 @@
 
   <!-- Start People Info -->
   <section id="people-info" class="">
+    <span class="close" id="close">X</span>
 
     <!-- Start Roy -->
     <div class="info">
@@ -517,7 +503,7 @@
   <!-- End People Info -->
 
   <!-- Start Featured People -->
-  <section id="feat-people" class="overflow-x-hidden swiper mySwiper w-100">
+  <section id="feat-people" class="overflow-x-hidden">
     <div class="section-title mx-5 mb-3">
       <h2 class="title stroke stroke-1 stroke-yellow fs-7 f-hanson mb-0 text-uppercase">
         The People
@@ -528,65 +514,62 @@
         Adventurous by nature, passionately creative, and constantly <br>seeking the road less traveled
       </p>
     </div>
-    
-    <div class="five-col swiper-wrapper">
-      <!-- <div class="slider-shadow"></div>
-      <div class="slider-shadow left"></div> -->
-      <div class="col swiper-slide">
-        <div class="showTeam">
-          <img src="/src/images/roy.jpg" alt="">
-          <h3 class="team-title mt-4 mb-3">Roy Aftimos</h3>
-          <h4 class="team-designation">CEO</h4>
+    <div class="swiper mySwiper w-100">
+      <div class="five-col swiper-wrapper">
+        <div class="col swiper-slide">
+          <div class="showTeam">
+            <img src="/src/images/roy.jpg" alt="">
+            <h3 class="team-title mt-4 mb-3">Roy Aftimos</h3>
+            <h4 class="team-designation">CEO</h4>
+          </div>
+        </div>
+        <div class="col swiper-slide">
+          <div class="showTeam">
+            <img src="/src/images/samer.jpg" alt="">
+            <h3 class="team-title mt-4 mb-3">Samer Qaqish</h3>
+            <h4 class="team-designation">General Manager</h4>
+          </div>
+        </div>
+        <div class="col swiper-slide">
+          <div class="showTeam">
+            <img src="/src/images/taniya.jpg" alt="">
+            <h3 class="team-title mt-4 mb-3">Taniya</h3>
+            <h4 class="team-designation">HR Director</h4>
+          </div>
+        </div>
+        <div class="col swiper-slide">
+          <div class="showTeam">
+            <img src="/src/images/zahir.jpg" alt="">
+            <h3 class="team-title mt-4 mb-3">Zahir Mirza</h3>
+            <h4 class="team-designation">Executive Creative Director</h4>
+          </div>
+        </div>
+        <div class="col swiper-slide">
+          <div class="showTeam">
+            <img src="/src/images/nair.jpg" alt="">
+            <h3 class="team-title mt-4 mb-3">Nair</h3>
+            <h4 class="team-designation">Finance Director</h4>
+          </div>
+        </div>
+        <div class="col swiper-slide">
+          <div class="showTeam">
+            <img src="/src/images/layal.jpg" alt="">
+            <h3 class="team-title mt-4 mb-3">Layal Elsayed</h3>
+            <h4 class="team-designation">Business Director</h4>
+          </div>
+        </div>
+        <div class="col swiper-slide">
+          <div class="showTeam">
+            <img src="/src/images/suraj.jpg" alt="">
+            <h3 class="team-title mt-4 mb-3">Suraj Sadeesh</h3>
+            <h4 class="team-designation">Strategic Growth Director</h4>
+          </div>
         </div>
       </div>
-      <div class="col swiper-slide">
-        <div class="showTeam">
-          <img src="/src/images/samer.jpg" alt="">
-          <h3 class="team-title mt-4 mb-3">Samer Qaqish</h3>
-          <h4 class="team-designation">General Manager</h4>
-        </div>
-      </div>
-      <div class="col swiper-slide">
-        <div class="showTeam">
-          <img src="/src/images/taniya.jpg" alt="">
-          <h3 class="team-title mt-4 mb-3">Taniya</h3>
-          <h4 class="team-designation">HR Director</h4>
-        </div>
-      </div>
-      <div class="col swiper-slide">
-        <div class="showTeam">
-          <img src="/src/images/zahir.jpg" alt="">
-          <h3 class="team-title mt-4 mb-3">Zahir Mirza</h3>
-          <h4 class="team-designation">Executive Creative Director</h4>
-        </div>
-      </div>
-      <div class="col swiper-slide">
-        <div class="showTeam">
-          <img src="/src/images/nair.jpg" alt="">
-          <h3 class="team-title mt-4 mb-3">Nair</h3>
-          <h4 class="team-designation">Finance Director</h4>
-        </div>
-      </div>
-      <div class="col swiper-slide">
-        <div class="showTeam">
-          <img src="/src/images/layal.jpg" alt="">
-          <h3 class="team-title mt-4 mb-3">Layal Elsayed</h3>
-          <h4 class="team-designation">Business Director</h4>
-        </div>
-      </div>
-      <div class="col swiper-slide">
-        <div class="showTeam">
-          <img src="/src/images/suraj.jpg" alt="">
-          <h3 class="team-title mt-4 mb-3">Suraj Sadeesh</h3>
-          <h4 class="team-designation">Strategic Growth Director</h4>
-        </div>
-      </div>
+      <div class="swiper-scrollbar"></div>
     </div>
-    <div class="swiper-scrollbar"></div>
   </section>
   <!-- End Featured People -->
-
-  
 
   <!-- Start Featured People -->
   <section id="locations" class="overflow-x-hidden">
@@ -860,6 +843,7 @@
   </section>
   <!-- End Alliances -->
 
+  <!-- Start Contact -->
   <div id="contact" class="contact overflow-x-hidden section-half d-flex align-items-center">
     <ul class="list-inline overflow-x-visibe d-flex">
       <li class="list-inline-item text-nowrap"><h2 class="fs-7 f-hanson">Let's talk<span class="arrow-upright"></span></h2></li>
@@ -867,17 +851,7 @@
       <li class="list-inline-item text-nowrap"><h2 class="fs-7 f-hanson">Let's talk<span class="arrow-upright"></span></h2></li>
     </ul>
   </div>
-
-  <!-- <div class="video-project-container scene">
-  </div> -->
-  <!-- <section class="centered">
-    <h2 class="phrase-1 text-center">
-      MAKERS & <br />
-      INNOVATOR, FOR <br />
-      THE LOVE OF <br />
-      THE CRAFT
-    </h2>
-  </section> -->
+  <!-- End Contact -->
 
   <div class="work-video">
     <span class="close">X</span>
@@ -954,6 +928,7 @@
       © 2023 C2 | Privacy Policy
     </div>
   </footer>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/CSSRulePlugin.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
@@ -961,7 +936,6 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.28/bundled/lenis.min.js"></script> 
   <script src="src/js/anime.min.js"></script>
-  
   <script src="src/js/custom.js"></script>
   <!-- <script src="src/js/fonts.js"></script> -->
 </body>

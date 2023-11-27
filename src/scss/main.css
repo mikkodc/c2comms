@@ -97,6 +97,24 @@ header nav .close,
   line-height: 24px;
 }
 
+#dashboard {
+  position: relative;
+}
+#dashboard .section-title {
+  position: absolute;
+  top: 0;
+}
+#dashboard .fade-content {
+  position: absolute;
+}
+#dashboard .fade-content:first-child {
+  width: 40%;
+}
+#dashboard .fade-content:nth-child(2) {
+  width: 60%;
+  right: 20px;
+}
+
 .dashboard-expand__main {
   position: relative;
 }

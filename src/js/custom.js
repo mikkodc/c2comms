@@ -3,6 +3,7 @@ $(function () {
   var headerNav = document.querySelector("header nav");
   var menuButton = document.querySelector(".menu-button");
   var cursorInfo = document.getElementById("cursor-info");
+  var bgVidSource = document.querySelector("#video-bg source");
 
   $(".close").on("click", (ev) => {
     hideNavWindow();
@@ -15,9 +16,13 @@ $(function () {
       trigger: "#feat-work",
       start: "top center",
       toggleActions: "restart none none reverse",
+    },
+    onComplete: function() {
+      console.log(bgVidSource)
+      bgVidSource.setAttribute('src', 'http://techslides.com/demos/sample-videos/small.webm');
+      bgVidSource.setAttribute('type', 'video/webm');
     }
   })
-
 
   $(".menu-button").on("click", (ev) => {
     showNavWindow();
@@ -63,7 +68,6 @@ $(function () {
 
   function showNavWindow() {
     menuExpand.play()
-
   }
 
   function hideNavWindow() {
@@ -339,11 +343,12 @@ $(function () {
   let showTeam = document.querySelectorAll(".showTeam");
   let teamInfo = document.querySelectorAll("#people-info .info");
   let infoContainer = document.getElementById("people-info");
+  let closeTeamInfo = document.querySelectorAll("#people-info .close");
 
   showTeam.forEach(function(team, i) {
     team.addEventListener("click", function () {
       gsap.to(window, { scrollTo: "#people-info" });
-      infoContainer.style.height = "auto";
+      // infoContainer.style.height = "auto";
       infoContainer.style.display = "block";
       
       // remove class active
@@ -355,21 +360,31 @@ $(function () {
 
       // add active on click
       teamInfo[i].classList.add("active");
+  
+      closeTeamInfo[0].addEventListener("click", function () {
+        infoContainer.style.display = "none";
+        teamInfo[i].classList.remove("active");
+        teamInfo[i].querySelector('video').pause();
+        setTimeout(() => {
+          teamInfo[i].children.item(3).classList.remove("active");
+        }, 1000);
+      });
     });
   });
 
   // Partners
   const partnersSection = document.querySelector("section.partners")
-  gsap.to(infoContainer, {
-    opacity:0, 
-    display: "none",
-    scrollTrigger: {
-      trigger: ".partners",
-      start: "top top",
-      scrub: 1,
-      ease: "circ.out",
-    }
-  })
+  // gsap.to(infoContainer, {
+  //   opacity:0, 
+  //   display: "none",
+  //   scrollTrigger: {
+  //     trigger: "#people-info",
+  //     start: "top top",
+  //     scrub: 1,
+  //     ease: "circ.out",
+  //     markers: true
+  //   }
+  // })
 
   // var imageRevealTl = gsap.timeline({
   //   scrollTrigger: {
@@ -415,7 +430,7 @@ $(function () {
     xPercent: 50,
     opacity: 0.5
   },{
-   xPercent: -80,
+   xPercent: -50,
    opacity: 1,
    scrollTrigger: {
     trigger: '#contact',
@@ -423,7 +438,6 @@ $(function () {
     end: "bottom center",
     scrub: 2,
     ease: "circ.out",
-    // markers: true
    } 
   })
 
@@ -449,7 +463,7 @@ $(function () {
   dashboardTl
     .set( dashboardTitle , { x: setX, y: setY } )
     .set(dashboardMainImg, {
-      scale: 1.6,
+      scale: 1.4,
       x: 200
     })
     .fromTo(dashboardTitle, { 
