@@ -3,24 +3,45 @@ $(function () {
   var headerNav = document.querySelector("header nav");
   var menuButton = document.querySelector(".menu-button");
   var cursorInfo = document.getElementById("cursor-info");
+  var bgVid = document.getElementById("video-bg");
   var bgVidSource = document.querySelector("#video-bg source");
 
   $(".close").on("click", (ev) => {
     hideNavWindow();
   });
 
-  gsap.from(headerMain, {
+  var didScroll;
+  var lastScrollTop = 0;
+  var delta = 5;
+  var navbarHeight = $('header').outerHeight();
+
+  
+  // Show Header after Opening Gambit
+  const showHeader = gsap.from(headerMain, {
     opacity: 0,
-    scrollTrigger: {
-      trigger: "#feat-work",
-      start: "top center",
-      toggleActions: "restart none none reverse",
-    },
-    onComplete: function() {
-      console.log(bgVidSource)
-      bgVidSource.setAttribute('src', 'http://techslides.com/demos/sample-videos/small.webm');
+    yPercent: -100,
+    paused: true,
+    duration: 0.2
+  }).progress(1);
+
+  ScrollTrigger.create({
+    trigger: "#feat-work",
+    start: "top center",
+    end: 99999,
+    toggleActions: "restart none none reverse",
+    onToggle: function() {
+      bgVidSource.setAttribute('src', 'src/videos/bg2.webm');
       bgVidSource.setAttribute('type', 'video/webm');
-    }
+      bgVid.load();
+      bgVid.play();
+    },
+    onUpdate: (self) => {
+      if(self.progress > 0) {
+        self.direction === -1 ? showHeader.play() : showHeader.reverse()
+      } else {
+        showHeader.reverse()
+      }
+    },
   })
 
   $(".menu-button").on("click", (ev) => {
@@ -72,6 +93,8 @@ $(function () {
   function hideNavWindow() {
     menuExpand.reverse()
   }
+
+  // End Header & Nav Functions
 
   const scenes = document.querySelectorAll(".scene");
 
@@ -318,6 +341,10 @@ $(function () {
       snapOnRelease: true,
       dragSize: 390,
     },
+    freeMode: true,
+    mousewheel: {
+      releaseOnEdges: true,
+    }
   });
 
   // Title Animations
