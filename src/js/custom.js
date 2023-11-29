@@ -9,39 +9,40 @@ $(function () {
   $(".close").on("click", (ev) => {
     hideNavWindow();
   });
-
-  var didScroll;
-  var lastScrollTop = 0;
-  var delta = 5;
-  var navbarHeight = $('header').outerHeight();
-
   
   // Show Header after Opening Gambit
-  const showHeader = gsap.from(headerMain, {
-    opacity: 0,
-    yPercent: -100,
+  var showHeader = gsap.to(headerMain, {
+    opacity: 1,
+    yPercent: 100,
     paused: true,
     duration: 0.2
-  }).progress(1);
+  });
 
   ScrollTrigger.create({
     trigger: "#feat-work",
     start: "top center",
     end: 99999,
+    animation: showHeader,
+    pinnedContainer: "#feat-work",
     toggleActions: "restart none none reverse",
-    onToggle: function() {
+    onEnter: self => {
+      // Change BG Video
       bgVidSource.setAttribute('src', 'src/videos/bg2.webm');
       bgVidSource.setAttribute('type', 'video/webm');
       bgVid.load();
       bgVid.play();
     },
     onUpdate: (self) => {
-      if(self.progress > 0) {
+      // Show Header when it enters '#feat-work' section and after a couple scroll, enable hide on scroll down and show on scroll up
+      if(self.progress > 0 && self.progress < 0.004) {
+        showHeader.play()
+      } else if(self.progress > 0.005) {
+        console.log('scrolling')
         self.direction === -1 ? showHeader.play() : showHeader.reverse()
       } else {
         showHeader.reverse()
       }
-    },
+    }
   })
 
   $(".menu-button").on("click", (ev) => {
@@ -95,7 +96,6 @@ $(function () {
   }
 
   // End Header & Nav Functions
-
   const scenes = document.querySelectorAll(".scene");
 
   var oneByOne = document.querySelectorAll(".one-by-one > div");
@@ -121,7 +121,7 @@ $(function () {
     easing: "linear",
     perspective: { value: [100, 100] },
     translateZ: [0, 95],
-    translateY: 0,
+    translateY: -5,
   });
 
   words.forEach((ele, i, arr) => {
@@ -157,7 +157,7 @@ $(function () {
     },
     perspective: { value: [100, 100] },
     translateZ: [0, 70],
-    translateY: 50,
+    translateY: 0,
     duration: 2000,
     easing: "linear",
   });

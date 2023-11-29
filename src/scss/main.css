@@ -272,6 +272,8 @@ header {
   z-index: 100;
   padding: 20px 60px;
   width: 100%;
+  opacity: 0;
+  transform: translate(0, -100%);
 }
 header .menu-button {
   cursor: pointer;
@@ -406,12 +408,15 @@ section {
   font-weight: 300;
 }
 
+.wrap {
+  animation: marquee 10s linear infinite;
+}
+
 .one-by-one {
   padding: 0 !important;
   font-family: hanson;
   height: 100vh !important;
 }
-
 .one-by-one p {
   margin-bottom: 0;
 }
