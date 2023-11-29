@@ -290,6 +290,9 @@ header .menu-button.active {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
+header .menu-button.active nav {
+  padding: 112px 60px 70px;
+}
 header .menu-button span {
   background-color: var(--white);
   display: inline-block;
@@ -304,7 +307,6 @@ header nav {
   position: absolute;
   top: 0;
   left: 0;
-  padding: 112px 60px 70px;
 }
 header nav a {
   color: white;
@@ -594,11 +596,17 @@ section {
 .dashboard-expand__item .dashboard-expand__content p:only-child() {
   margin-bottom: 0;
 }
+.dashboard-expand__item.active {
+  z-index: 10;
+}
 .dashboard-expand__item.active .dashboard-expand__expand:after {
   transform: rotate(0deg);
 }
 .dashboard-expand__item.active .dashboard-expand__expand:before {
   transform: rotate(0deg);
+}
+.dashboard-expand__item + .dashboard-expand__item.active:not(.active) {
+  opacity: 0.5 !important;
 }
 .dashboard-expand__item:first-child {
   top: 90px;
@@ -610,13 +618,13 @@ section {
 }
 .dashboard-expand__item:nth-child(3) {
   right: 50px;
-  top: 50%;
+  top: 90%;
   transform: translateY(-50%);
 }
 .dashboard-expand__item:nth-child(4) {
   right: calc(50% - 200px);
   transform: translateY(-50%);
-  top: 100%;
+  top: 140%;
 }
 .dashboard-expand__item:nth-child(5) {
   top: 0;
@@ -624,8 +632,9 @@ section {
   transform: translateX(-50%);
 }
 .dashboard-expand__item:nth-child(6) {
-  top: 60%;
-  left: 20px;
+  top: 100%;
+  transform: translateY(-50%);
+  left: 60px;
 }
 .dashboard-expand__header {
   padding: 14px 18px;

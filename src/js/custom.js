@@ -6,9 +6,8 @@ $(function () {
   var bgVid = document.getElementById("video-bg");
   var bgVidSource = document.querySelector("#video-bg source");
 
-  $(".close").on("click", (ev) => {
-    hideNavWindow();
-  });
+  // Initialize GSAP Plugins
+  gsap.registerPlugin(ScrollTrigger, ScrollToPlugin) 
   
   // Show Header after Opening Gambit
   var showHeader = gsap.to(headerMain, {
@@ -45,17 +44,23 @@ $(function () {
     }
   })
 
+  // Navigation Events
   $(".menu-button").on("click", (ev) => {
     showNavWindow();
   });
+  
+  $(".close").on("click", (ev) => {
+    hideNavWindow();
+  });
 
-  // hide the header nav when blur
+  // Hide the header nav when blur
   window.addEventListener("click", (ev) => {
     if (!headerNav.contains(ev.target) && !menuButton.contains(ev.target)) {
       hideNavWindow();
     }
   });
 
+  // Navigation Animation
   const menuLabel = document.querySelector(".menu-button__wrapper")
   const menuItems = gsap.utils.toArray(".menu-button .animate")
   const menuNav = document.querySelector(".menu-button nav")
@@ -95,9 +100,8 @@ $(function () {
     menuExpand.reverse()
   }
 
-  // End Header & Nav Functions
+  // One by One section
   const scenes = document.querySelectorAll(".scene");
-
   var oneByOne = document.querySelectorAll(".one-by-one > div");
   var words = document.querySelectorAll(".one-by-one > div .words");
 
@@ -207,7 +211,7 @@ $(function () {
   }, 10);
 
 
-  // featured work section
+  // Featured work section
   var detectMouse = false;
   let featVideo = document.querySelectorAll(".work video");
 
@@ -319,17 +323,6 @@ $(function () {
     };
   });
 
-  // Smooth Scroll
-  // const lenis = new Lenis()
-
-  // function raf(time) {
-  //   lenis.raf(time)
-  //   requestAnimationFrame(raf)
-  // }
-
-  // requestAnimationFrame(raf)
-
-
   // Horizontal Sections
   var swiper = new Swiper(".mySwiper", {
     slidesPerView: "auto",
@@ -365,7 +358,6 @@ $(function () {
   });
 
   // People Info
-  gsap.registerPlugin(ScrollToPlugin)
   let showTeam = document.querySelectorAll(".showTeam");
   let teamInfo = document.querySelectorAll("#people-info .info");
   let infoContainer = document.getElementById("people-info");
@@ -556,18 +548,17 @@ $(function () {
         if(elem.classList.contains('active')) {
           elem.classList.remove('active')
         } else {
+          for (j = 0; j < expandItem.length; j++){
+            if(expandItem[j].classList.contains('active')) {
+              expandItem[j].classList.remove('active')
+            }
+          }
           elem.classList.add("active");
-          // for (j = 0; j < expandItem.length; j++){
-          //   if(expandItem[j].classList.contains('active')) {
-          //     expandItem[j].classList.remove('active')
-          //   }
-          // }
         }
       })
     })
 
   // Case Studies
-  gsap.registerPlugin(ScrollToPlugin)
   let caseStudyCards = gsap.utils.toArray(".case-studies__card");
   let caseStudyScrollbar = document.querySelector('#case-study .swiper-scrollbar');
 
