@@ -5,9 +5,6 @@ $(function () {
   var cursorInfo = document.getElementById("cursor-info");
   var bgVid = document.getElementById("video-bg");
   var bgVidSource = document.querySelector("#video-bg source");
-
-  // Initialize GSAP Plugins
-  gsap.registerPlugin(ScrollTrigger, ScrollToPlugin) 
   
   // Show Header after Opening Gambit
   var showHeader = gsap.to(headerMain, {
@@ -17,6 +14,23 @@ $(function () {
     duration: 0.2
   });
 
+  // Navigation Events
+  $(".menu-button").on("click", (ev) => {
+    showNavWindow();
+  });
+  
+  $(".close").on("click", (ev) => {
+    hideNavWindow();
+  });
+
+  // Hide the header nav when blur
+  window.addEventListener("click", (ev) => {
+    if (!headerNav.contains(ev.target) && !menuButton.contains(ev.target)) {
+      hideNavWindow();
+    }
+  });
+
+  // Menu Scroll Trigger
   ScrollTrigger.create({
     trigger: "#feat-work",
     start: "top center",
@@ -36,29 +50,12 @@ $(function () {
       if(self.progress > 0 && self.progress < 0.004) {
         showHeader.play()
       } else if(self.progress > 0.005) {
-        console.log('scrolling')
         self.direction === -1 ? showHeader.play() : showHeader.reverse()
       } else {
         showHeader.reverse()
       }
     }
   })
-
-  // Navigation Events
-  $(".menu-button").on("click", (ev) => {
-    showNavWindow();
-  });
-  
-  $(".close").on("click", (ev) => {
-    hideNavWindow();
-  });
-
-  // Hide the header nav when blur
-  window.addEventListener("click", (ev) => {
-    if (!headerNav.contains(ev.target) && !menuButton.contains(ev.target)) {
-      hideNavWindow();
-    }
-  });
 
   // Navigation Animation
   const menuLabel = document.querySelector(".menu-button__wrapper")
@@ -74,7 +71,7 @@ $(function () {
     }
   })
   .to(menuButton, {
-    width: "40%"
+    width: "30%"
   }, "-=0.25")
   .to(menuButton, {
     height: 650
@@ -240,6 +237,23 @@ $(function () {
     });
   });
 
+  // Title Animations
+  gsap.utils.toArray(".section-title .title").forEach(function(elem) {
+    const $section = $(elem);
+    const $titleBorder = CSSRulePlugin.getRule('.section-title:before')
+    var titleChange = gsap.timeline({defaults:{duration: 1}});
+    titleChange.from($section, {opacity: 0, y: 100
+      })
+      .fromTo($titleBorder, {width:"0px", opacity: 0}, {width:"100%", opacity: 1}, "-=0.5")
+    
+      ScrollTrigger.create({
+        trigger: elem,
+        start: "top 75%",
+        animation: titleChange,
+        triggerActions: "restart none reverse pause"
+      });
+  });
+
   // featured work section - show video on click
   let showVideo = document.querySelectorAll(".showVideo");
   let workVideo = document.querySelectorAll(".work-video");
@@ -327,34 +341,16 @@ $(function () {
   var swiper = new Swiper(".mySwiper", {
     slidesPerView: "auto",
     spaceBetween: 15,
-    // autoHeight: true,
     scrollbar: {
       el: '.swiper-scrollbar',
       draggable: true,
       snapOnRelease: true,
       dragSize: 390,
     },
-    freeMode: true,
-    mousewheel: {
-      releaseOnEdges: true,
-    }
-  });
-
-  // Title Animations
-  gsap.utils.toArray(".section-title .title").forEach(function(elem) {
-    const $section = $(elem);
-    const $titleBorder = CSSRulePlugin.getRule('.section-title:before')
-    var titleChange = gsap.timeline({defaults:{duration: 1}});
-    titleChange.from($section, {opacity: 0, y: 100
-      })
-      .fromTo($titleBorder, {width:"0px", opacity: 0}, {width:"100%", opacity: 1}, "-=0.5")
-    
-      ScrollTrigger.create({
-        trigger: elem,
-        start: "top 75%",
-        animation: titleChange,
-        triggerActions: "restart none reverse pause"
-      });
+    // freeMode: true,
+    // mousewheel: {
+    //   releaseOnEdges: true,
+    // }
   });
 
   // People Info
@@ -363,10 +359,29 @@ $(function () {
   let infoContainer = document.getElementById("people-info");
   let closeTeamInfo = document.querySelectorAll("#people-info .close");
 
+  const hidePeopleInfo = gsap.to(infoContainer, {
+    opacity: 0,
+    height: 0,
+    paused: true,
+    duration: 0.5
+  });
+
+  ScrollTrigger.create({
+    trigger: "#feat-people",
+    start: "top center",
+    // markers: true,
+    animation: hidePeopleInfo,
+    onEnter: self => {
+      // ScrollTrigger.refresh()
+      // infoContainer.style.height = 0;
+      // hidePeopleInfo.play()
+    }
+  })
+
   showTeam.forEach(function(team, i) {
     team.addEventListener("click", function () {
       gsap.to(window, { scrollTo: "#people-info" });
-      // infoContainer.style.height = "auto";
+      infoContainer.style.height = "auto";
       infoContainer.style.display = "block";
       
       // remove class active
@@ -379,14 +394,14 @@ $(function () {
       // add active on click
       teamInfo[i].classList.add("active");
   
-      closeTeamInfo[0].addEventListener("click", function () {
-        infoContainer.style.display = "none";
-        teamInfo[i].classList.remove("active");
-        teamInfo[i].querySelector('video').pause();
-        setTimeout(() => {
-          teamInfo[i].children.item(3).classList.remove("active");
-        }, 1000);
-      });
+      // closeTeamInfo[0].addEventListener("click", function () {
+      //   infoContainer.style.display = "none";
+      //   teamInfo[i].classList.remove("active");
+      //   teamInfo[i].querySelector('video').pause();
+      //   setTimeout(() => {
+      //     teamInfo[i].children.item(3).classList.remove("active");
+      //   }, 1000);
+      // });
     });
   });
 
@@ -422,23 +437,7 @@ $(function () {
   //   stagger: 0.25
   // }, "-=2")
 
-  var allianceRevealTl = gsap.timeline({
-    scrollTrigger: {
-      trigger: ".alliances",
-      start: "top center",
-      ease: "expo.out",
-    }
-  })
-
-  allianceRevealTl.to('.alliance .reveal-block', {
-    scaleY: 0,
-    stagger: 0.1
-  })
-  .from('.alliance img', {
-    duration: 1, 
-    opacity: 0,
-    stagger: 0.1
-  }, "-=2")
+  
   
 
   // Contact Us Marquee
@@ -456,6 +455,7 @@ $(function () {
     end: "bottom center",
     scrub: 2,
     ease: "circ.out",
+    // markers: true
    } 
   })
 
@@ -467,7 +467,7 @@ $(function () {
 
   var setX = $(window).width()/2 - dashboardTitle.offsetWidth/2;
   var setY = $(window).height()/2;
-
+  
   const dashboardTl = gsap.timeline({
     scrollTrigger: {
       trigger: '#dashboard',
@@ -558,7 +558,7 @@ $(function () {
       })
     })
 
-  // Case Studies
+  // Case Studies  
   let caseStudyCards = gsap.utils.toArray(".case-studies__card");
   let caseStudyScrollbar = document.querySelector('#case-study .swiper-scrollbar');
 
@@ -566,7 +566,7 @@ $(function () {
     scrollTrigger: {
       trigger: '#case-study',
       start: "center center",
-      bottom: "center -=15000",
+      bottom: "center",
       pin: true,
       scrub: 1
     }
@@ -575,7 +575,7 @@ $(function () {
   caseStudyTl
     .from(caseStudyCards, {
       opacity: 0,
-      y: 100,
+      y: 0,
       stagger: 0.2,
       duration: 2
     }, "+=1")
@@ -597,22 +597,41 @@ $(function () {
       y: 100
     }, "+=2")
 
-    // Image Scroll Skew
-    // let proxy = { skew: 0 },
-    // skewSetter = gsap.quickSetter("section img", "skewY", "deg"),
-    // clamp = gsap.utils.clamp(-5, 5);
+  caseStudyCards.forEach(function(card) {
+    const cardButton = card.querySelector('.arrow-upright')
 
-    // ScrollTrigger.create({
-    //   onUpdate: (self) => {
-    //     let skew = clamp(self.getVelocity() / -100);
-    //     // only do something if the skew is MORE severe. Remember, we're always tweening back to 0, so if the user slows their scrolling quickly, it's more natural to just let the tween handle that smoothly rather than jumping to the smaller skew.
-    //     if (Math.abs(skew) > Math.abs(proxy.skew)) {
-    //       proxy.skew = skew;
-    //       gsap.to(proxy, {skew: 0, duration: 0.8, ease: "power3", overwrite: true, onUpdate: () => skewSetter(proxy.skew)});
-    //     }
-    //   }
-    // });
+    cardButton.addEventListener("click", function(e) {
+      const cardAnimate = card.querySelectorAll('.animate')
+      const cardFace = card.querySelectorAll('.case-studies__face')
 
-    // gsap.set("section img", {transformOrigin: "right center", force3D: true});
+      const flipCard = gsap.timeline({ defaults: {duration: 0.5} });
+
+      flipCard.to(cardAnimate, {
+        opacity: 0,
+        y: 100,
+        stagger: 0.15
+      }).to(cardFace, { rotationY:"+=180", duration: 1.5 })
+      .to(cardFace[1], { scale: 10, duration: 1}, "-=1")
+    })
+  })
+
+  // Alliance
+  var allianceRevealTl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".alliances",
+      start: "top center",
+      ease: "expo.out",
+    }
+  })
+
+  allianceRevealTl.to('.alliance .reveal-block', {
+    scaleY: 0,
+    stagger: 0.1
+  })
+  .from('.alliance img', {
+    duration: 1, 
+    opacity: 0,
+    stagger: 0.1
+  }, "-=2")
 
 });

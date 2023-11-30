@@ -351,7 +351,7 @@ header nav .close,
 .video-bg video {
   display: inline-block;
   width: inherit;
-  transform: scale(1.3);
+  transform: scale(1.2);
 }
 
 section {
@@ -653,30 +653,52 @@ section {
   position: relative;
   max-height: 680px;
 }
-.case-studies__card {
-  width: 570px;
-  border-radius: 30px;
+.case-studies__face {
+  position: absolute;
+  width: 100%;
+  height: 100%; /* Safari */
+  backface-visibility: hidden;
   background-color: #d9d9d9;
   padding: 53px 45px;
+  border-radius: 30px;
+}
+.case-studies__front {
+  position: relative;
+  height: 100%;
+}
+.case-studies__back {
+  transform: rotateY(180deg);
+}
+.case-studies__card {
+  position: relative;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  width: 570px;
   position: absolute;
   left: calc(50% - 20px);
-  transform: translateX(-200px);
+  height: 540px;
   z-index: 1;
 }
 .case-studies__card:nth-child(2) {
   left: 50%;
-  background-color: #434343;
   z-index: 0;
+}
+.case-studies__card:nth-child(2) .case-studies__face {
+  background-color: #434343;
 }
 .case-studies__card:nth-child(3) {
   left: calc(50% + 20px);
-  background-color: #8D8D8D;
   z-index: -1;
+}
+.case-studies__card:nth-child(3) .case-studies__face {
+  background-color: #8D8D8D;
 }
 .case-studies__card:nth-child(4) {
   left: calc(50% + 40px);
-  background-color: #ADADAD;
   z-index: -2;
+}
+.case-studies__card:nth-child(4) .case-studies__face {
+  background-color: #ADADAD;
 }
 .case-studies__header {
   color: #000;
@@ -731,15 +753,12 @@ section {
 #people-info {
   padding: 100px 0;
   padding-top: 200px !important;
-  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh !important;
-  overflow-y: scroll;
+  height: 0;
   display: none;
   z-index: 99;
-  background: rgba(0, 0, 0, 0.145) url(../images/gradient.jpg) center/cover no-repeat;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
@@ -843,6 +862,41 @@ footer.social h6 {
 footer.social a {
   color: #fff;
   font-size: 32px;
+}
+
+body.inner-page {
+  min-height: 100vh;
+}
+body.inner-page section {
+  min-height: 100vh;
+}
+body.inner-page header {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+body.inner-page .main-content {
+  padding-top: 156px;
+}
+body.inner-page .main-content .content {
+  min-height: 500px;
+}
+body.inner-page .main-content h3 {
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 38px;
+}
+body.inner-page .main-content p {
+  font-size: 20px;
+  line-height: 24px;
+}
+body.inner-page .main-content a.button-primary {
+  background-color: #fff;
+  padding: 8px;
+  border-radius: 8px;
+  font-size: 20px;
+  line-height: 24px;
+  color: #000;
+  text-decoration: none;
 }
 
 @media screen and (max-height: 800px) {
