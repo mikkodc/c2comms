@@ -97,6 +97,36 @@ $(function () {
     menuExpand.reverse()
   }
 
+  //* Global Animations
+
+  // Title Animations
+  gsap.utils.toArray(".section-title .title").forEach(function(elem) {
+    const $section = $(elem);
+    const $titleBorder = CSSRulePlugin.getRule('.section-title:before')
+    var titleChange = gsap.timeline({defaults:{duration: 1}});
+    titleChange.from($section, {opacity: 0, y: 100
+      })
+      .fromTo($titleBorder, {width:"0px", opacity: 0}, {width:"100%", opacity: 1}, "-=0.5")
+      
+      ScrollTrigger.create({
+        trigger: elem,
+        start: "top 75%",
+        animation: titleChange,
+        triggerActions: "restart none reverse pause"
+      });
+  });
+
+  // Horizontal Section
+  // gsap.utils.toArray(".scrollx").forEach(function(elem) {
+    
+  //   var titleChange = gsap.timeline({defaults:{duration: 1}});
+  //   titleChange.from($section, {opacity: 0, y: 100
+  //     })
+  //     .fromTo($titleBorder, {width:"0px", opacity: 0}, {width:"100%", opacity: 1}, "-=0.5")
+      
+  //     ScrollTrigger.create({
+
+
   // One by One section
   const scenes = document.querySelectorAll(".scene");
   var oneByOne = document.querySelectorAll(".one-by-one > div");
@@ -237,32 +267,6 @@ $(function () {
     });
   });
 
-  // Title Animations
-  gsap.utils.toArray(".section-title .title").forEach(function(elem) {
-    const $section = $(elem);
-    const $titleBorder = CSSRulePlugin.getRule('.section-title:before')
-    var titleChange = gsap.timeline({defaults:{duration: 1}});
-    titleChange.from($section, {opacity: 0, y: 100
-      })
-      .fromTo($titleBorder, {width:"0px", opacity: 0}, {width:"100%", opacity: 1}, "-=0.5")
-      
-      ScrollTrigger.create({
-        trigger: elem,
-        start: "top 75%",
-        animation: titleChange,
-        triggerActions: "restart none reverse pause"
-      });
-  });
-
-  // gsap.utils.toArray(".scrollx").forEach(function(elem) {
-    
-  //   var titleChange = gsap.timeline({defaults:{duration: 1}});
-  //   titleChange.from($section, {opacity: 0, y: 100
-  //     })
-  //     .fromTo($titleBorder, {width:"0px", opacity: 0}, {width:"100%", opacity: 1}, "-=0.5")
-      
-  //     ScrollTrigger.create({
-
   // featured work section - show video on click
   let showVideo = document.querySelectorAll(".showVideo");
   let workVideo = document.querySelectorAll(".work-video");
@@ -388,7 +392,8 @@ $(function () {
   // Dashboard
   const dashboardTitle = document.querySelector('#dashboard .section-title')
   const dashboardMainImg = document.querySelector('.dashboard-expand__main img')
-  const fadeContent = gsap.utils.toArray('#dashboard .fade-content')
+  const dashboardRow = document.querySelector('#dashboard .row')
+  const fadeContent = gsap.utils.toArray('#dashboard .section-content')
   let expandItem = document.querySelectorAll(".dashboard-expand__item");
 
   var setX = $(window).width()/2 - dashboardTitle.offsetWidth/2;
@@ -410,8 +415,8 @@ $(function () {
   dashboardTl
     .set( dashboardTitle , { x: setX, y: setY } )
     .set(dashboardMainImg, {
-      scale: 1.4,
-      x: 200
+      scale: 1.3,
+      x: 100
     })
     .fromTo(dashboardTitle, { 
       x: setX, 
@@ -458,8 +463,8 @@ $(function () {
     }, "-=0.5")
     .to(fadeContent[1], {
       width: "100%",
-      // height: "100%"
     }, "+=0.75")
+    .to(dashboardRow, { top: 0 })
     .to(dashboardMainImg, {
       scale: 0.65,
       x: 0,

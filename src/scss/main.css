@@ -530,14 +530,19 @@ section {
   position: absolute;
   top: 0;
 }
-#dashboard .fade-content {
+#dashboard .row {
+  position: absolute;
+  top: 100px;
+  width: 100%;
+}
+#dashboard .section-content {
   position: absolute;
 }
-#dashboard .fade-content:first-child {
+#dashboard .section-content:first-child {
   width: 40%;
 }
-#dashboard .fade-content:nth-child(2) {
-  width: 60%;
+#dashboard .section-content:nth-child(2) {
+  width: 50%;
   right: 20px;
 }
 
@@ -950,4 +955,9 @@ body.inner-page .main-content a.button-primary {
   #dashboard {
     height: 600px !important;
   }
+}
+.row .section-content {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }/*# sourceMappingURL=main.css.map */

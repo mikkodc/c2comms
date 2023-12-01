@@ -587,7 +587,13 @@ section {
     top: 0;
   }
 
-  .fade-content {
+  .row {
+    position: absolute;
+    top: 100px;
+    width: 100%;
+  }
+
+  .section-content {
     position: absolute;
 
     &:first-child {
@@ -595,14 +601,13 @@ section {
     }
 
     &:nth-child(2) {
-      width: 60%;
+      width: 50%;
       right: 20px;
     }
   }
 }
 
 .dashboard-expand {
-
   $parent: &;
 
   &__main {
@@ -1092,5 +1097,12 @@ body.inner-page {
   }
   #dashboard {
     height: 600px!important;
+  }
+}
+.row {
+  .section-content {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
   }
 }
