@@ -424,6 +424,7 @@ section {
   font-size: 64px;
   line-height: 70px;
   text-transform: uppercase;
+  text-wrap: nowrap;
   font-weight: 700;
   position: relative;
   display: inline-block;
@@ -925,17 +926,15 @@ section {
     margin-bottom: 112px;
 
     li {
-      button {
-        font-size: 36px;
-        line-height: 43px;
-        opacity: 0.5;
-        color: #fff;
+      font-size: 36px;
+      line-height: 43px;
+      opacity: 0.5;
+      color: #fff;
 
-        &.active,
-        &:hover {
-            opacity: 1;
-            color: #fff;
-        }
+      &.active,
+      &:hover {
+          opacity: 1;
+          color: #fff;
       }
     }
   }
@@ -1028,6 +1027,7 @@ body.inner-page {
   min-height: 100vh;
 
   section {
+    padding-top: 200px!important;
     min-height: 100vh;
   }
 
@@ -1040,7 +1040,7 @@ body.inner-page {
     padding-top: 156px;
 
     .content {
-      min-height: 500px;
+      min-height: 400px;
     }
 
     h3 {
@@ -1054,7 +1054,7 @@ body.inner-page {
       line-height: 24px;
     }
 
-    a.button-primary {
+    .button-primary {
       background-color: #fff;
       padding: 8px;
       border-radius: 8px;
@@ -1062,6 +1062,19 @@ body.inner-page {
       line-height: 24px;
       color: #000;
       text-decoration: none;
+    }
+
+    .button-link {
+      font-size: 20px;
+      line-height: 24px;
+      color: #fff;
+      text-decoration: none;
+      background: transparent;
+      border: none;
+
+      .fa {
+        margin-right: 15px;
+      }
     }
   }
 }

@@ -545,15 +545,6 @@ $(function () {
       stagger: 0.2,
       duration: 4
     })
-    // .to(caseStudyCards[1], {
-    //   left: 300
-    // })
-    // .to(caseStudyCards[2], {
-    //   left: 100
-    // })
-    // .to(caseStudyCards[3], {
-    //   left: 1800
-    // })
 
   caseStudyCards.forEach(function(card) {
     const cardButton = card.querySelector('.arrow-upright')
@@ -572,6 +563,8 @@ $(function () {
       .to(cardFace[1], { scale: 10, duration: 1}, "-=1")
     })
   })
+
+  // Partners
 
   // Alliance
   function animateImg(element) {
@@ -598,7 +591,8 @@ $(function () {
   }
 
   let imgReveal = gsap.utils.toArray('.img-reveal')
-  let navTab = document.querySelectorAll('.nav .nav-link')
+  let navTab = gsap.utils.toArray('.nav .nav-link')
+  let navContent = gsap.utils.toArray('.tab-content .tab-pane')
 
   // Animate Images of Nav Tab Open
   navTab.forEach(function(item) {
@@ -606,6 +600,45 @@ $(function () {
       let activeNavImg = gsap.utils.toArray('.tab-pane.active .img-reveal')
       animateImg(activeNavImg)
     })
+  })
+  
+  var previousNum = 0
+  
+  function updateTab(index) {
+    if(index > 0) {
+      navTab.forEach(function(nav) {
+        nav.classList.remove('active')
+      })
+      navContent.forEach(function(content) {
+        content.classList.remove('active')
+        content.classList.remove('show')
+        // content.style.display = "none"
+      })
+      
+      navTab[index].classList.add('active')
+      navContent[index].classList.add('active')
+      navContent[index].classList.add('show')
+      // navContent[index].style.display = "block"
+      
+      let activeNavImg = gsap.utils.toArray('.tab-pane.active .img-reveal')
+      animateImg(activeNavImg)
+    }
+  }
+
+  ScrollTrigger.create({
+    trigger: ".partners",
+    start: "top top",
+    end: "+=3000",
+    pin: true,
+    toggleActions: "restart none none reverse",
+    onUpdate: (self) => {
+      var currentNum = parseInt(Math.round((self.progress.toFixed(2) * 100 / 100) * navTab.length + 1) - 1)
+      
+      if (currentNum === previousNum) {
+        updateTab(currentNum - 1)
+        self.direction >= 1 ? previousNum++ : previousNum--
+      }
+    }
   })
   
   // Animate Images on viewport show

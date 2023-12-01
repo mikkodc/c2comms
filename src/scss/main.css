@@ -392,6 +392,7 @@ section {
   font-size: 64px;
   line-height: 70px;
   text-transform: uppercase;
+  text-wrap: nowrap;
   font-weight: 700;
   position: relative;
   display: inline-block;
@@ -795,13 +796,13 @@ section {
   margin-top: 72px;
   margin-bottom: 112px;
 }
-.partners ul li button {
+.partners ul li {
   font-size: 36px;
   line-height: 43px;
   opacity: 0.5;
   color: #fff;
 }
-.partners ul li button.active, .partners ul li button:hover {
+.partners ul li.active, .partners ul li:hover {
   opacity: 1;
   color: #fff;
 }
@@ -883,6 +884,7 @@ body.inner-page {
   min-height: 100vh;
 }
 body.inner-page section {
+  padding-top: 200px !important;
   min-height: 100vh;
 }
 body.inner-page header {
@@ -893,7 +895,7 @@ body.inner-page .main-content {
   padding-top: 156px;
 }
 body.inner-page .main-content .content {
-  min-height: 500px;
+  min-height: 400px;
 }
 body.inner-page .main-content h3 {
   font-weight: 300;
@@ -904,7 +906,7 @@ body.inner-page .main-content p {
   font-size: 20px;
   line-height: 24px;
 }
-body.inner-page .main-content a.button-primary {
+body.inner-page .main-content .button-primary {
   background-color: #fff;
   padding: 8px;
   border-radius: 8px;
@@ -912,6 +914,17 @@ body.inner-page .main-content a.button-primary {
   line-height: 24px;
   color: #000;
   text-decoration: none;
+}
+body.inner-page .main-content .button-link {
+  font-size: 20px;
+  line-height: 24px;
+  color: #fff;
+  text-decoration: none;
+  background: transparent;
+  border: none;
+}
+body.inner-page .main-content .button-link .fa {
+  margin-right: 15px;
 }
 
 .img-reveal {
