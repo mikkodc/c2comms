@@ -272,6 +272,13 @@ $(function () {
   let workVideo = document.querySelectorAll(".work-video");
   let closeWorkVideo = document.querySelectorAll(".work-video .close");
 
+  // gsap.to('#feat-work .swiper-wrapper', {
+  //   scrollTrigger: {
+  //     trigger: "#feat-work",
+  //     pin: true,
+  //   },
+  // })
+
   // show the video
   showVideo.forEach((video, i) => {
     video.addEventListener("click", function () {
@@ -366,6 +373,7 @@ $(function () {
   let showTeam = document.querySelectorAll(".showTeam");
   let teamInfo = document.querySelectorAll("#people-info .info");
   let infoContainer = document.getElementById("people-info");
+  let peopleItem = document.getElementById("feat-people");
 
   showTeam.forEach(function(team, i) {
     team.addEventListener("click", function () {
@@ -413,13 +421,12 @@ $(function () {
   })
 
   dashboardTl
-    .set( dashboardTitle , { x: setX, y: setY } )
     .set(dashboardMainImg, {
       scale: 1.3,
       x: 100
     })
     .fromTo(dashboardTitle, { 
-      x: setX, 
+      x: setX - dashboardTitle.offsetWidth/4, 
       y: setY,
       opacity:0, 
       ease:"back.out(5)", 
@@ -429,12 +436,12 @@ $(function () {
       duration: 2
     })
     .to(dashboardTitle, {
-      y: 100,
-      x: setX, 
       y: 50,
       x: 0,
-      width: "94%",
       duration: 3
+    })
+    .to(dashboardTitle, {
+      width: "94%"
     })
     .from(fadeContent, {
       opacity: 0,
@@ -514,9 +521,8 @@ $(function () {
   })
 
   caseStudyTl
-    .set( csTitle , { x: csSetX, y: csSetY, transformOrigin: "center" } )
     .fromTo(csTitle, { 
-      x: csSetX, 
+      x: csSetX - csTitle.offsetWidth/4, 
       y: csSetY,
       opacity:0, 
       ease:"back.out(5)", 
@@ -526,12 +532,12 @@ $(function () {
       duration: 2
     })
     .to(csTitle, {
-      y: 100,
-      x: setX, 
       y: 50,
       x: 0,
-      width: "94%",
       duration: 3
+    })
+    .to(csTitle, {
+      width: "94%"
     })
     .from(csContent, {
       opacity: 0,
@@ -539,25 +545,15 @@ $(function () {
       stagger: 0.2,
       duration: 4
     })
-    .from(caseStudyCards, {
-      opacity: 0,
-      y: 0,
-      stagger: 0.2,
-      duration: 2
-    }, "+=1")
-    .to(caseStudyCards[0], {
-      left: 0
-    }, "+=0.5")
-    .to(caseStudyCards[3], {
-      left: 1800,
-      delay: 1
-    })
-    .to(caseStudyCards[1], {
-      left: 600
-    }, "+=0.5")
-    .to(caseStudyCards[2], {
-      left: 1200
-    }, "+=0.5")
+    // .to(caseStudyCards[1], {
+    //   left: 300
+    // })
+    // .to(caseStudyCards[2], {
+    //   left: 100
+    // })
+    // .to(caseStudyCards[3], {
+    //   left: 1800
+    // })
 
   caseStudyCards.forEach(function(card) {
     const cardButton = card.querySelector('.arrow-upright')
@@ -614,7 +610,6 @@ $(function () {
   
   // Animate Images on viewport show
   animateImg(imgReveal)
-
   
   // Contact Us Marquee
   const contactMarquee = document.querySelector('.contact ul')

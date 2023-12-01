@@ -759,7 +759,7 @@ section {
 
   gap: 30px;
   position: relative;
-  max-height: 680px;
+  // max-height: 680px;
 
   &__face {
     position: absolute;
@@ -783,17 +783,16 @@ section {
 
   &__card {
     position: relative;
-    transition: transform 0.8s;
-    transform-style: preserve-3d;
-    width: 570px;
-    position: absolute;
-    left: calc(50% - 20px);
+    // transition: transform 0.8s;
+    // transform-style: preserve-3d;
+    width: calc((100vw / 3) - 60px);
+    // position: absolute;
     height: 540px;
-    // transform: translateX(-200px);
+    // transform: translateX(-50%);
     z-index: 1;
 
     &:nth-child(2) {
-      left: 50%;
+      // left: 50%;
       z-index: 0;
 
       #{ $parent }__face {
@@ -802,7 +801,7 @@ section {
     }
 
     &:nth-child(3) {
-      left: calc(50% + 20px);
+      // left: calc(50% + 20px);
       z-index: -1;
 
       #{ $parent }__face {
@@ -811,7 +810,7 @@ section {
     }
 
     &:nth-child(4) {
-      left: calc(50% + 40px);
+      // left: calc(50% + 40px);
       z-index: -2;
 
       #{ $parent }__face {
@@ -1106,12 +1105,13 @@ body.inner-page {
     line-height: 30px;
   }
   section {
-    height: auto!important;
-    min-height: 0!important;
+    max-height: none!important;
+    height: 100%!important;
+    min-height: 600px!important;
     padding: 50px 0!important;
   }
   .case-studies {
-    height: 540px!important;
+    height: 400px!important;
     display: block;
   }
   #dashboard {
