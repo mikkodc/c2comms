@@ -749,6 +749,9 @@ section {
   min-width: 340px;
   margin: 0 30px;
 }
+#feat-people .showTeam:hover {
+  cursor: pointer;
+}
 
 #people-info {
   padding: 100px 0;
@@ -897,6 +900,34 @@ body.inner-page .main-content a.button-primary {
   line-height: 24px;
   color: #000;
   text-decoration: none;
+}
+
+.img-reveal {
+  overflow: hidden;
+}
+.img-reveal .reveal-inner,
+.img-reveal .reveal-bl {
+  width: 100%;
+  height: 100%;
+  -webkit-clip-path: polygon(100% 0%, 100% 0%, 0% 0%, 0% 0%);
+          clip-path: polygon(100% 0%, 100% 0%, 0% 0%, 0% 0%);
+}
+.img-reveal .reveal-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+}
+.img-reveal .reveal-bl {
+  overflow: hidden;
+}
+.img-reveal .reveal-bl img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  will-change: transform;
 }
 
 @media screen and (max-height: 800px) {

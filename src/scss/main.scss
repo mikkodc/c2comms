@@ -855,6 +855,12 @@ section {
       margin: 0 30px;
     }
   }
+
+  .showTeam {
+    &:hover {
+      cursor: pointer;
+    }
+  }
 }
 
 #people-info {
@@ -1035,6 +1041,35 @@ body.inner-page {
       text-decoration: none;
     }
   }
+}
+
+.img-reveal {
+  overflow: hidden;
+
+  .reveal-inner,
+  .reveal-bl {
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(100% 0%, 100% 0%, 0% 0%, 0% 0%);
+  }
+  .reveal-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+  }
+  .reveal-bl {
+    overflow: hidden;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      will-change: transform;
+    }
+  }
+
 }
 
 // Media Queries

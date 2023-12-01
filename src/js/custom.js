@@ -245,7 +245,7 @@ $(function () {
     titleChange.from($section, {opacity: 0, y: 100
       })
       .fromTo($titleBorder, {width:"0px", opacity: 0}, {width:"100%", opacity: 1}, "-=0.5")
-    
+      
       ScrollTrigger.create({
         trigger: elem,
         start: "top 75%",
@@ -253,6 +253,15 @@ $(function () {
         triggerActions: "restart none reverse pause"
       });
   });
+
+  // gsap.utils.toArray(".scrollx").forEach(function(elem) {
+    
+  //   var titleChange = gsap.timeline({defaults:{duration: 1}});
+  //   titleChange.from($section, {opacity: 0, y: 100
+  //     })
+  //     .fromTo($titleBorder, {width:"0px", opacity: 0}, {width:"100%", opacity: 1}, "-=0.5")
+      
+  //     ScrollTrigger.create({
 
   // featured work section - show video on click
   let showVideo = document.querySelectorAll(".showVideo");
@@ -347,36 +356,12 @@ $(function () {
       snapOnRelease: true,
       dragSize: 390,
     },
-    // freeMode: true,
-    // mousewheel: {
-    //   releaseOnEdges: true,
-    // }
   });
 
   // People Info
   let showTeam = document.querySelectorAll(".showTeam");
   let teamInfo = document.querySelectorAll("#people-info .info");
   let infoContainer = document.getElementById("people-info");
-  let closeTeamInfo = document.querySelectorAll("#people-info .close");
-
-  const hidePeopleInfo = gsap.to(infoContainer, {
-    opacity: 0,
-    height: 0,
-    paused: true,
-    duration: 0.5
-  });
-
-  ScrollTrigger.create({
-    trigger: "#feat-people",
-    start: "top center",
-    // markers: true,
-    animation: hidePeopleInfo,
-    onEnter: self => {
-      // ScrollTrigger.refresh()
-      // infoContainer.style.height = 0;
-      // hidePeopleInfo.play()
-    }
-  })
 
   showTeam.forEach(function(team, i) {
     team.addEventListener("click", function () {
@@ -393,71 +378,12 @@ $(function () {
 
       // add active on click
       teamInfo[i].classList.add("active");
-  
-      // closeTeamInfo[0].addEventListener("click", function () {
-      //   infoContainer.style.display = "none";
-      //   teamInfo[i].classList.remove("active");
-      //   teamInfo[i].querySelector('video').pause();
-      //   setTimeout(() => {
-      //     teamInfo[i].children.item(3).classList.remove("active");
-      //   }, 1000);
-      // });
+
+      setTimeout(function() {
+        ScrollTrigger.refresh()
+      }, 1000)
     });
   });
-
-  // Partners
-  const partnersSection = document.querySelector("section.partners")
-  // gsap.to(infoContainer, {
-  //   opacity:0, 
-  //   display: "none",
-  //   scrollTrigger: {
-  //     trigger: "#people-info",
-  //     start: "top top",
-  //     scrub: 1,
-  //     ease: "circ.out",
-  //     markers: true
-  //   }
-  // })
-
-  // var imageRevealTl = gsap.timeline({
-  //   scrollTrigger: {
-  //     trigger: ".partners",
-  //     start: "top center",
-  //     ease: "expo.out",
-  //   }
-  // })
-
-  // imageRevealTl.to('.partners .reveal-block', {
-  //   scaleY: 0,
-  //   stagger: 0.25
-  // })
-  // .from('.partners img', {
-  //   duration: 1, 
-  //   opacity: 0,
-  //   stagger: 0.25
-  // }, "-=2")
-
-  
-  
-
-  // Contact Us Marquee
-  const contactMarquee = document.querySelector('.contact ul')
-
-  gsap.fromTo(contactMarquee, {
-    xPercent: 50,
-    opacity: 0.5
-  },{
-   xPercent: -50,
-   opacity: 1,
-   scrollTrigger: {
-    trigger: '#contact',
-    start: "top bottom",
-    end: "bottom center",
-    scrub: 2,
-    ease: "circ.out",
-    // markers: true
-   } 
-  })
 
   // Dashboard
   const dashboardTitle = document.querySelector('#dashboard .section-title')
@@ -475,6 +401,9 @@ $(function () {
       bottom: "center center",
       pin: true,
       scrub: 1,
+      onLeave: () => {
+        ScrollTrigger.refresh()
+      }
     }
   })
 
@@ -568,7 +497,10 @@ $(function () {
       start: "center center",
       bottom: "center",
       pin: true,
-      scrub: 1
+      scrub: 1,
+      onLeave: () => {
+        ScrollTrigger.refresh()
+      }
     }
   })
 
@@ -616,22 +548,61 @@ $(function () {
   })
 
   // Alliance
-  var allianceRevealTl = gsap.timeline({
-    scrollTrigger: {
-      trigger: ".alliances",
-      start: "top center",
-      ease: "expo.out",
-    }
-  })
+  function animateImg(element) {
+    element.forEach((imgItem) => {
+      const imgInner = imgItem.querySelector('.reveal-inner')
+      const imgBl = imgItem.querySelector('.reveal-bl')
+      const imgImg = imgItem.querySelector('.reveal-bl img')
+  
+      let imgRevealTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: imgItem,
+          start: "top bottom",
+          toggleActions: "play none none none"
+        }
+      })
+      imgRevealTl.set(imgInner, { clipPath: "polygon(100% 0%, 100% 0%, 0% 0%, 0% 0%)"})
+      imgRevealTl.set(imgBl, { clipPath: "polygon(100% 0%, 100% 0%, 0% 0%, 0% 0%)"})
+      imgRevealTl.from(imgItem, 1, { opacity: 0, translateY: "80px", ease: "expo.out" })
+      imgRevealTl.to(imgInner, 0.5, { clipPath: "polygon(100% 100%, 100% 0%, 0% 0%, 0% 100%)", ease: "expo.out" })
+      imgRevealTl.to(imgInner, 0.5, { clipPath: "polygon(100% 100%, 100% 100%, 0% 100%, 0% 100%)", ease: "expo.out" })
+      imgRevealTl.to(imgBl, 0.5, { clipPath: "polygon(100% 100%, 100% 0%, 0% 0%, 0% 100%)", ease: "expo.out" }, "-=0.5")
+      imgRevealTl.from(imgImg, 2, { opacity: 0, scale: 0.75, ease: "expo.out" }, "-=0.5")
+    })
+  }
 
-  allianceRevealTl.to('.alliance .reveal-block', {
-    scaleY: 0,
-    stagger: 0.1
+  let imgReveal = gsap.utils.toArray('.img-reveal')
+  let navTab = document.querySelectorAll('.nav .nav-link')
+
+  // Animate Images of Nav Tab Open
+  navTab.forEach(function(item) {
+    item.addEventListener("click", (e) => {
+      let activeNavImg = gsap.utils.toArray('.tab-pane.active .img-reveal')
+      animateImg(activeNavImg)
+    })
   })
-  .from('.alliance img', {
-    duration: 1, 
-    opacity: 0,
-    stagger: 0.1
-  }, "-=2")
+  
+  // Animate Images on viewport show
+  animateImg(imgReveal)
+
+  
+  // Contact Us Marquee
+  const contactMarquee = document.querySelector('.contact ul')
+
+  gsap.fromTo(contactMarquee, {
+    xPercent: 50,
+    opacity: 0.5
+  },{
+   xPercent: -50,
+   opacity: 1,
+   scrollTrigger: {
+    trigger: '#contact',
+    start: "top bottom",
+    end: "bottom center",
+    scrub: 2,
+    ease: "circ.out",
+    // markers: true
+   } 
+  })
 
 });
