@@ -396,8 +396,8 @@ $(function () {
   const fadeContent = gsap.utils.toArray('#dashboard .section-content')
   let expandItem = document.querySelectorAll(".dashboard-expand__item");
 
-  var setX = $(window).width()/2 - dashboardTitle.offsetWidth/2;
-  var setY = $(window).height()/2;
+  var setX = ($(window).width()/2) - (dashboardTitle.offsetWidth/2);
+  var setY = ($(window).height()/2) - (dashboardTitle.offsetHeight/2);
   
   const dashboardTl = gsap.timeline({
     scrollTrigger: {
@@ -494,7 +494,11 @@ $(function () {
 
   // Case Studies  
   let caseStudyCards = gsap.utils.toArray(".case-studies__card");
-  let caseStudyScrollbar = document.querySelector('#case-study .swiper-scrollbar');
+  const csTitle = document.querySelector('#case-study .section-title')
+  const csContent = gsap.utils.toArray('#case-study .section-content')
+
+  var csSetX = ($(window).width()/2) - (csTitle.offsetWidth/2);
+  var csSetY = ($(window).height()/2) - (csTitle.offsetHeight/2);
 
   const caseStudyTl = gsap.timeline({
     scrollTrigger: {
@@ -510,6 +514,31 @@ $(function () {
   })
 
   caseStudyTl
+    .set( csTitle , { x: csSetX, y: csSetY, transformOrigin: "center" } )
+    .fromTo(csTitle, { 
+      x: csSetX, 
+      y: csSetY,
+      opacity:0, 
+      ease:"back.out(5)", 
+      duration: 1,
+    }, {
+      opacity: 1,
+      duration: 2
+    })
+    .to(csTitle, {
+      y: 100,
+      x: setX, 
+      y: 50,
+      x: 0,
+      width: "94%",
+      duration: 3
+    })
+    .from(csContent, {
+      opacity: 0,
+      y: 100,
+      stagger: 0.2,
+      duration: 4
+    })
     .from(caseStudyCards, {
       opacity: 0,
       y: 0,
@@ -529,10 +558,6 @@ $(function () {
     .to(caseStudyCards[2], {
       left: 1200
     }, "+=0.5")
-    .from(caseStudyScrollbar, {
-      opacity: 0,
-      y: 100
-    }, "+=2")
 
   caseStudyCards.forEach(function(card) {
     const cardButton = card.querySelector('.arrow-upright')

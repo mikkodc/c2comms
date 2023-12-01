@@ -426,6 +426,7 @@ section {
   text-transform: uppercase;
   font-weight: 700;
   position: relative;
+  display: inline-block;
 }
 
 .content {
@@ -575,6 +576,17 @@ section {
       opacity: 1;
       transition: 3s;
     }
+  }
+}
+
+// Animated Section
+.animated-section {
+  position: relative;
+
+  .section-title,
+  .section-content {
+    position: absolute;
+    top: 0;
   }
 }
 
@@ -735,6 +747,13 @@ section {
 }
 
 // Case Studies
+#case-study {
+  .mySwiper {
+    height: 540px!important;
+    top: 150px!important;
+  }
+}
+
 .case-studies {
   $parent: &;
 

@@ -394,6 +394,7 @@ section {
   text-transform: uppercase;
   font-weight: 700;
   position: relative;
+  display: inline-block;
 }
 
 .content {
@@ -521,6 +522,15 @@ section {
 .work-video .feat-footer.active {
   opacity: 1;
   transition: 3s;
+}
+
+.animated-section {
+  position: relative;
+}
+.animated-section .section-title,
+.animated-section .section-content {
+  position: absolute;
+  top: 0;
 }
 
 #dashboard {
@@ -651,6 +661,11 @@ section {
 }
 .dashboard-expand__item.active .dashboard-expand__content {
   display: block;
+}
+
+#case-study .mySwiper {
+  height: 540px !important;
+  top: 150px !important;
 }
 
 .case-studies {
