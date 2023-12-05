@@ -50,9 +50,15 @@ $(function () {
       if(self.progress > 0 && self.progress < 0.004) {
         showHeader.play()
       } else if(self.progress > 0.005) {
-        self.direction === -1 ? showHeader.play() : showHeader.reverse()
+        if(self.direction === -1) {
+          showHeader.play()
+        } else {
+          showHeader.reverse()
+          hideNavWindow()
+        } 
       } else {
         showHeader.reverse()
+        hideNavWindow()
       }
     }
   })
@@ -91,6 +97,7 @@ $(function () {
 
   function showNavWindow() {
     menuExpand.play()
+    ScrollTrigger.refresh()
   }
 
   function hideNavWindow() {
@@ -116,17 +123,6 @@ $(function () {
       });
   });
 
-  // Horizontal Section
-  // gsap.utils.toArray(".scrollx").forEach(function(elem) {
-    
-  //   var titleChange = gsap.timeline({defaults:{duration: 1}});
-  //   titleChange.from($section, {opacity: 0, y: 100
-  //     })
-  //     .fromTo($titleBorder, {width:"0px", opacity: 0}, {width:"100%", opacity: 1}, "-=0.5")
-      
-  //     ScrollTrigger.create({
-
-
   // One by One section
   const scenes = document.querySelectorAll(".scene");
   var oneByOne = document.querySelectorAll(".one-by-one > div");
@@ -151,7 +147,7 @@ $(function () {
     targets: oneByOne[0],
     easing: "linear",
     perspective: { value: [100, 100] },
-    translateZ: [0, 95],
+    translateZ: [50, 95],
     translateY: -5,
   });
 
@@ -314,15 +310,9 @@ $(function () {
         if (ele.classList.contains("active")) {
           if (ele.children.item(1).paused) {
             ele.children.item(1).play();
-            // videoStatus[i].innerHTML = ">";
-            // videoStatus[i].classList.add("playing");
-            // videoStatus[i].classList.remove("paused");
             playing = true;
           } else {
             ele.children.item(1).pause();
-            // videoStatus[i].innerHTML = "||";
-            // videoStatus[i].classList.remove("playing");
-            // videoStatus[i].classList.add("paused");
             cursorInfo.innerHTML = "&#11208;";
             playing = !playing;
           }
@@ -545,24 +535,6 @@ $(function () {
       stagger: 0.2,
       duration: 4
     })
-
-  caseStudyCards.forEach(function(card) {
-    const cardButton = card.querySelector('.arrow-upright')
-
-    cardButton.addEventListener("click", function(e) {
-      const cardAnimate = card.querySelectorAll('.animate')
-      const cardFace = card.querySelectorAll('.case-studies__face')
-
-      const flipCard = gsap.timeline({ defaults: {duration: 0.5} });
-
-      flipCard.to(cardAnimate, {
-        opacity: 0,
-        y: 100,
-        stagger: 0.15
-      }).to(cardFace, { rotationY:"+=180", duration: 1.5 })
-      .to(cardFace[1], { scale: 10, duration: 1}, "-=1")
-    })
-  })
 
   // Partners
 

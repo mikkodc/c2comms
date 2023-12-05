@@ -478,8 +478,16 @@ section {
     }
   }  
 
+  .words {
+    opacity: 0;
+  }
+
   .words .word {
     font-size: 15px !important;
+  }
+
+  .centered:first-child {
+    font-size: 30px;
   }
 
   .centered:nth-last-child(2) .word:first-child {
@@ -770,7 +778,6 @@ section {
     backface-visibility: hidden;
     background-color: #d9d9d9;
     padding: 53px 45px;
-    border-radius: 30px;
   }
   
   &__front {

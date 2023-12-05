@@ -440,8 +440,14 @@ section {
 .one-by-one div:first {
   opacity: 1;
 }
+.one-by-one .words {
+  opacity: 0;
+}
 .one-by-one .words .word {
   font-size: 15px !important;
+}
+.one-by-one .centered:first-child {
+  font-size: 30px;
 }
 .one-by-one .centered:nth-last-child(2) .word:first-child {
   color: var(--yellow);
@@ -680,7 +686,6 @@ section {
   backface-visibility: hidden;
   background-color: #d9d9d9;
   padding: 53px 45px;
-  border-radius: 30px;
 }
 .case-studies__front {
   position: relative;
