@@ -1,10 +1,18 @@
 $(function () {
+
+  // Preloader
+  $(window).on("load", function() {
+		$(".se-pre-con").fadeOut("slow");;
+	});
+
   var headerMain = document.querySelector("header");
   var headerNav = document.querySelector("header nav");
   var menuButton = document.querySelector(".menu-button");
+  var navLinks = gsap.utils.toArray(".menu-button nav a");
   var cursorInfo = document.getElementById("cursor-info");
   var bgVid = document.getElementById("video-bg");
   var bgVidSource = document.querySelector("#video-bg source");
+  var navClick = false;
   
   // Show Header after Opening Gambit
   var showHeader = gsap.to(headerMain, {
@@ -23,6 +31,14 @@ $(function () {
     hideNavWindow();
   });
 
+  // Nav Link Click
+  navLinks.forEach(function(a) {
+    a.addEventListener("click", function(e) {
+      hideNavWindow();
+      navClick = true;
+    });
+  });
+
   // Hide the header nav when blur
   window.addEventListener("click", (ev) => {
     if (!headerNav.contains(ev.target) && !menuButton.contains(ev.target)) {
@@ -32,7 +48,7 @@ $(function () {
 
   // Menu Scroll Trigger
   ScrollTrigger.create({
-    trigger: "#feat-work",
+    trigger: ".start-nav",
     start: "top center",
     end: 99999,
     animation: showHeader,
@@ -46,19 +62,20 @@ $(function () {
       bgVid.play();
     },
     onUpdate: (self) => {
+      console.log(navClick)
       // Show Header when it enters '#feat-work' section and after a couple scroll, enable hide on scroll down and show on scroll up
       if(self.progress > 0 && self.progress < 0.004) {
         showHeader.play()
-      } else if(self.progress > 0.005) {
-        if(self.direction === -1) {
+      } else if(self.progress > 0.004) {
+
+        // Fix hiding header on navClick
+        if(self.direction === -1 && !navClick) {
           showHeader.play()
         } else {
+          navClick = false
           showHeader.reverse()
           hideNavWindow()
         } 
-      } else {
-        showHeader.reverse()
-        hideNavWindow()
       }
     }
   })
@@ -367,7 +384,9 @@ $(function () {
 
   showTeam.forEach(function(team, i) {
     team.addEventListener("click", function () {
-      gsap.to(window, { scrollTo: "#people-info" });
+      gsap.to(window, { 
+        scrollTo: "#people-info"
+      });
       infoContainer.style.height = "auto";
       infoContainer.style.display = "block";
       
@@ -631,7 +650,6 @@ $(function () {
     end: "bottom center",
     scrub: 2,
     ease: "circ.out",
-    // markers: true
    } 
   })
 
