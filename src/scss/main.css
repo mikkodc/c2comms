@@ -160,6 +160,13 @@ img {
 .arrow-upright--black-outline::before {
   background: url(../images/arrow-upright-black.svg) center/contain no-repeat;
 }
+.arrow-upright--white-outline {
+  background-color: transparent;
+  border: 1px solid #ffffff;
+}
+.arrow-upright--white-outline::before {
+  background: url(../images/arrow-upright-white.svg) center/contain no-repeat;
+}
 .arrow-upright--sm {
   width: 80px;
   height: 80px;

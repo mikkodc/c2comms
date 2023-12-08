@@ -1,8 +1,17 @@
-$(function () {
+$(function () {// Get the hash value from the URL
+  var hash = window.location.hash;
 
   // Preloader
   $(window).on("load", function() {
-		$(".se-pre-con").fadeOut("slow");;
+		$(".se-pre-con").fadeOut("slow");
+    
+    // Check if the hash exists
+    if (hash) {
+      // Smooth scroll to the element with the matching ID
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 1000);
+    }
 	});
 
   var headerMain = document.querySelector("header");
@@ -366,7 +375,7 @@ $(function () {
 
   // Horizontal Sections
   var swiper = new Swiper(".mySwiper", {
-    slidesPerView: 2,
+    slidesPerView: "auto",
     spaceBetween: 15,
     centeredSlides:false,
     loop:false,
@@ -479,8 +488,7 @@ $(function () {
       display: "none",
     }, "-=0.5")
     .to(fadeContent[1], {
-      width: "100%",
-      y: "-50%"
+      width: "100%"
     }, "+=0.75")
     .to(dashboardRow, { top: 0 })
     .to(dashboardMainImg, {

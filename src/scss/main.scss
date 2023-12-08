@@ -162,6 +162,15 @@ img {
     }
   }
 
+  &--white-outline {
+    background-color: transparent;
+    border: 1px solid #ffffff;
+
+    &::before {
+      background: url(../images/arrow-upright-white.svg) center/contain no-repeat;
+    }
+  }
+
   // Size
   &--sm {
     width: 80px;
