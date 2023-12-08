@@ -409,8 +409,8 @@ header nav .close,
 section {
   /* min-height: 800px;
   height: calc(100vh - 156px); */
-  // min-height: calc(100vh - 156px);
-  min-height: 100vh;
+  min-height: calc(100vh - 156px);
+  // min-height: 100vh;
   padding: 100px 0!important;
   display: flex;
   flex-direction: column;
@@ -781,7 +781,7 @@ section {
 
 // Case Studies
 #case-study {
-  .mySwiper {
+  .caseSwiper {
     height: 540px!important;
     top: 150px!important;
   }
@@ -1151,7 +1151,8 @@ body.inner-page {
   section {
     max-height: none!important;
     height: 100%!important;
-    min-height: 600px!important;
+    // min-height: 600px!important;
+    min-height: 100vh;
     padding: 50px 0!important;
   }
   .case-studies {

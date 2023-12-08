@@ -71,7 +71,6 @@ $(function () {// Get the hash value from the URL
       bgVid.play();
     },
     onUpdate: (self) => {
-      console.log(navClick)
       // Show Header when it enters '#feat-work' section and after a couple scroll, enable hide on scroll down and show on scroll up
       if(self.progress > 0 && self.progress < 0.004) {
         showHeader.play()
@@ -374,11 +373,27 @@ $(function () {// Get the hash value from the URL
   });
 
   // Horizontal Sections
-  var swiper = new Swiper(".mySwiper", {
-    slidesPerView: "auto",
+  var workSwiper = new Swiper(".workSwiper", {
+    slidesPerView: 'auto',
     spaceBetween: 15,
-    centeredSlides:false,
-    loop:false,
+    scrollbar: {
+      el: '.swiper-scrollbar',
+      draggable: true,
+      dragSize: 390,
+    },
+  });
+  var caseSwiper = new Swiper(".caseSwiper", {
+    slidesPerView: 'auto',
+    spaceBetween: 15,
+    scrollbar: {
+      el: '.swiper-scrollbar',
+      draggable: true,
+      dragSize: 390,
+    },
+  });
+  var peopleSwiper = new Swiper(".peopleSwiper", {
+    slidesPerView: 'auto',
+    spaceBetween: 15,
     scrollbar: {
       el: '.swiper-scrollbar',
       draggable: true,

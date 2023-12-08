@@ -386,7 +386,7 @@ header nav .close,
 section {
   /* min-height: 800px;
   height: calc(100vh - 156px); */
-  min-height: 100vh;
+  min-height: calc(100vh - 156px);
   padding: 100px 0 !important;
   display: flex;
   flex-direction: column;
@@ -700,7 +700,7 @@ section {
   display: block;
 }
 
-#case-study .mySwiper {
+#case-study .caseSwiper {
   height: 540px !important;
   top: 150px !important;
 }
@@ -1001,7 +1001,7 @@ body.inner-page .main-content .button-link .fa {
   section {
     max-height: none !important;
     height: 100% !important;
-    min-height: 600px !important;
+    min-height: 100vh;
     padding: 50px 0 !important;
   }
   .case-studies {
