@@ -366,12 +366,13 @@ $(function () {
 
   // Horizontal Sections
   var swiper = new Swiper(".mySwiper", {
-    slidesPerView: "auto",
+    slidesPerView: 2,
     spaceBetween: 15,
+    centeredSlides:false,
+    loop:false,
     scrollbar: {
       el: '.swiper-scrollbar',
       draggable: true,
-      snapOnRelease: true,
       dragSize: 390,
     },
   });
@@ -479,6 +480,7 @@ $(function () {
     }, "-=0.5")
     .to(fadeContent[1], {
       width: "100%",
+      y: "-50%"
     }, "+=0.75")
     .to(dashboardRow, { top: 0 })
     .to(dashboardMainImg, {
