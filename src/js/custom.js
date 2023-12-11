@@ -1,4 +1,5 @@
-$(function () {// Get the hash value from the URL
+$(function () {
+  // Get the hash value from the URL
   var hash = window.location.hash;
 
   // Preloader
@@ -13,6 +14,9 @@ $(function () {// Get the hash value from the URL
       }, 1000);
     }
 	});
+
+  // Lazyload Images
+  lazyload();
 
   var headerMain = document.querySelector("header");
   var headerNav = document.querySelector("header nav");
